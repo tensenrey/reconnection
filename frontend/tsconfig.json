@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "target": "es5",
+    "module": "esnext",
+    "noImplicitAny": true,
+    "jsx": "react",
+    "lib": ["DOM"],
+    "typeRoots": ["node_modules/@types"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@components/*": ["./src/components/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@layouts/*": ["./src/layouts/*"],
+      "@modals/*": ["./src/modals/*"],
+      "@store/*": ["./src/store/*"],
+      "@views/*": ["./src/views/*"],
+      "@ui/*": ["./src/ui/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@api/*": ["./src/api/*"]
+    },
+    "esModuleInterop": true
+  },
+  "include": ["./ext.d.ts", "src", "./src/index.tsx"]
+}

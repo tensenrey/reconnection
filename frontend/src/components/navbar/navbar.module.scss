@@ -1,0 +1,101 @@
+@import "@ui/variables.module.scss";
+
+.navbar {
+  height: 80px;
+  max-width: 1280px;
+  width: 100%;
+  color: $main_black_color;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  font-size: 16px;
+  position: sticky;
+  top: 0;
+  background-color: $main_white_color;
+  z-index: 2;
+}
+
+.call__line {
+  position: sticky;
+  top: 0;
+  height: 14px;
+  background: $main_call_line_default_color;
+  background: $main_gradient_call_line_color;
+  width: 100%;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.username {
+  cursor: pointer;
+  text-decoration: none;
+  color: $main_gray_2b_color;
+  line-height: 24px;
+  &:visited {
+    color: $main_black_color;
+  }
+}
+
+.user__content {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  &:hover > .username {
+    font-weight: bold;
+  }
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  background-color: $main_gray_2b_color;
+  border-radius: 50%;
+}
+
+.navbar__menu {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navbar__menu__item {
+  cursor: pointer;
+  list-style-type: none;
+  text-transform: capitalize;
+  &:hover {
+    font-weight: bold;
+  }
+  &:visited {
+    color: $main_black_color;
+  }
+}
+
+.navbar__logo {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.navigation {
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: calc(50% - 200px);
+}
+
+.navbar__menu__input {
+  width: 100%;
+  height: 32px;
+  padding: 10px;
+  background-color: $main_gray_2208_color;
+  color: $main_black_2170_color;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}

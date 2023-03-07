@@ -4,6 +4,6 @@ import { Controller, Post } from '@nestjs/common';
 export class AuthenticationController {
   @Post()
   authentication() {
-    return {} || undefined; 
+    return {} || undefined;
   }
 }

@@ -19,7 +19,11 @@ import { AuthorizationController } from './authorization/authorization.controlle
     PostsModule,
     BroadcastsModule,
   ],
-  controllers: [ChannelController, AuthenticationController, AuthorizationController],
+  controllers: [
+    ChannelController,
+    AuthenticationController,
+    AuthorizationController,
+  ],
   providers: [ChannelGateway, NotificationsGateway, ChatGateway, StreamGateway],
 })
 export class AppModule {}

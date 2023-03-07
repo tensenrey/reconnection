@@ -4,6 +4,9 @@ import { BroadcastsModule } from './broadcasts/broadcasts.module';
 import { ChannelGateway } from './channel/channel.gateway';
 import { ConfigModule } from '@nestjs/config';
 import { ChannelController } from './channel/channel.controller';
+import { NotificationsGateway } from './notifications/notifications.gateway';
+import { ChatGateway } from './chat/chat.gateway';
+import { StreamGateway } from './stream/stream.gateway';
 
 @Module({
   imports: [
@@ -15,6 +18,6 @@ import { ChannelController } from './channel/channel.controller';
     BroadcastsModule,
   ],
   controllers: [ChannelController],
-  providers: [ChannelGateway],
+  providers: [ChannelGateway, NotificationsGateway, ChatGateway, StreamGateway],
 })
 export class AppModule {}

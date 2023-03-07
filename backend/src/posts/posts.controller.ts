@@ -17,12 +17,12 @@ export class PostsController {
     return {};
   }
 
-  @Put()
+  @Put('id')
   change() {
     return {};
   }
 
-  @Delete()
+  @Delete('id')
   delete() {
     return null;
   }

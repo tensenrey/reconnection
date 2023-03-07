@@ -8,23 +8,8 @@ export class ChannelGateway {
     console.log(`Socket connected: ${client.id} room: ${roomID}`);
   }
 
-  @SubscribeMessage('streaming')
-  handleStream(client: Socket, stream: string) {
-    console.log(`Socket streaming ${client.id} stream: ${stream}`);
-  }
-
   @SubscribeMessage('leave')
   handleDisconnect(client: Socket) {
     console.log(`Socket disconnected: ${client.id}`);
-  }
-
-  @SubscribeMessage('action')
-  handleAction(client: Socket, action: string) {
-    console.log(`Socket ${client} toggle  action: ${action}`);
-  }
-
-  @SubscribeMessage('chat')
-  handleChat(client: Socket, action: string) {
-    console.log(`Socket ${client} toggle  action: ${action}`);
   }
 }

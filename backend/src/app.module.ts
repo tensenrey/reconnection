@@ -3,6 +3,7 @@ import { PostsModule } from './posts/posts.module';
 import { BroadcastsModule } from './broadcasts/broadcasts.module';
 import { ChannelGateway } from './channel/channel.gateway';
 import { ConfigModule } from '@nestjs/config';
+import { ChannelController } from './channel/channel.controller';
 
 @Module({
   imports: [
@@ -13,7 +14,7 @@ import { ConfigModule } from '@nestjs/config';
     PostsModule,
     BroadcastsModule,
   ],
-  controllers: [],
+  controllers: [ChannelController],
   providers: [ChannelGateway],
 })
 export class AppModule {}

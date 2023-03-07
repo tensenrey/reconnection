@@ -1,14 +1,12 @@
 import { Module } from '@nestjs/common';
 import { PostsModule } from './post/post.module';
 import { BroadcastsModule } from './broadcast/broadcast.module';
-import { ChannelGateway } from './channel/channel.gateway';
 import { ConfigModule } from '@nestjs/config';
-import { ChannelController } from './channel/channel.controller';
-import { NotificationsGateway } from './notification/notification.gateway';
-import { ChatGateway } from './chat/chat.gateway';
-import { StreamGateway } from './stream/stream.gateway';
-import { AuthenticationController } from './authentication/authentication.controller';
-import { AuthorizationController } from './authorization/authorization.controller';
+import { ChannelModule } from './channel/channel.module';
+import { AuthenticationModule } from './authentication/authentication.module';
+import { AuthorizationModule } from './authorization/authorization.module';
+import { NotificationModule } from './notification/notification.module';
+import { ChatModule } from './chat/chat.module';
 
 @Module({
   imports: [
@@ -18,12 +16,13 @@ import { AuthorizationController } from './authorization/authorization.controlle
     }),
     PostsModule,
     BroadcastsModule,
+    ChannelModule,
+    AuthenticationModule,
+    AuthorizationModule,
+    NotificationModule,
+    ChatModule,
   ],
-  controllers: [
-    ChannelController,
-    AuthenticationController,
-    AuthorizationController,
-  ],
-  providers: [ChannelGateway, NotificationsGateway, ChatGateway, StreamGateway],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}

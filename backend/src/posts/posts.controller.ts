@@ -1,14 +1,29 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Delete, Post, Controller, Get, Param, Put } from '@nestjs/common';
 
 @Controller('posts')
 export class PostsController {
   @Get()
   getAll() {
-    return [];
+    return [] || undefined;
   }
 
-  @Get("id")
-  getById(@Param("id") id: string) { 
-    return id
+  @Get('id')
+  getById(@Param('id') id: string) {
+    return id || undefined;
+  }
+
+  @Post()
+  create() {
+    return {};
+  }
+
+  @Put()
+  change() {
+    return {};
+  }
+
+  @Delete()
+  delete() {
+    return null;
   }
 }

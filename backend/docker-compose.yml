@@ -1,0 +1,15 @@
+version: '3'
+services:
+  mongo: 
+    image: mongo
+    container_name: reconnectionDB
+    restart: always
+    environment:
+      - MONGO_ROOT_USER=tensenrey
+      - MONGO_ROOT_PASS=070323010818
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo-data:/data/db
+    command: --wiredTigerCacheSizeGB 2.5
+ 

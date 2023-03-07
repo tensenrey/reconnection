@@ -1,11 +1,19 @@
 import { Module } from '@nestjs/common';
 import { PostsModule } from './posts/posts.module';
 import { BroadcastsModule } from './broadcasts/broadcasts.module';
-import { WebsocketGateway } from './websocket/websocket.gateway';
+import { ChannelGateway } from './channel/channel.gateway';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [PostsModule, BroadcastsModule],
+  imports: [
+    ConfigModule.forRoot({
+      envFilePath: '.env',
+      isGlobal: true,
+    }),
+    PostsModule,
+    BroadcastsModule,
+  ],
   controllers: [],
-  providers: [WebsocketGateway],
+  providers: [ChannelGateway],
 })
 export class AppModule {}

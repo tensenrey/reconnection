@@ -7,8 +7,8 @@ export class BroadcastsController {
     return [] || undefined;
   }
 
-  @Get('id')
-  getById(@Param('id') id: string) {
+  @Get(':id')
+  getById(@Param(':id') id: string) {
     return id || undefined;
   }
 
@@ -17,12 +17,12 @@ export class BroadcastsController {
     return {};
   }
 
-  @Put('id')
+  @Put(':id')
   change() {
     return {};
   }
 
-  @Delete('id')
+  @Delete(':id')
   delete() {
     return null;
   }

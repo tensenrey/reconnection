@@ -7,10 +7,12 @@ export class NotificationsGateway {
   handleNewNotification(socket: Socket, notification: string) {
     console.log(`Socket ${socket}, new notification ${notification}`);
   }
+
   @SubscribeMessage('read')
   handleReadNotification(socket: Socket, notification: string) {
     console.log(`Socket ${socket}, read notification ${notification}`);
   }
+
   @SubscribeMessage('delete')
   handleDeleteNotification(socket: Socket, notification: string) {
     console.log(`Socket ${socket}, read notification ${notification}`);

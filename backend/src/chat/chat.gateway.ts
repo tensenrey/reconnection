@@ -17,4 +17,9 @@ export class ChatGateway {
   handleRemoveMessage(socket: Socket, message: string) {
     console.log(`Socket ${socket} remove message ${message}`);
   }
+
+  @SubscribeMessage('forward')
+  handleForwardMessage(socket: Socket, message: string) {
+    console.log(`Socket ${socket}, forward message ${message}`);
+  }
 }

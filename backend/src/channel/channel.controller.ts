@@ -10,8 +10,8 @@ import {
 
 @Controller('channel')
 export class ChannelController {
-  @Get('id')
-  getByID(@Param('id') id: string) {
+  @Get(':id')
+  getByID(@Param(':id') id: string) {
     return id || undefined;
   }
 
@@ -20,22 +20,22 @@ export class ChannelController {
     return {};
   }
 
-  @Patch('id')
+  @Patch(':id')
   join() {
     return {};
   }
 
-  @Put('id')
+  @Put(':id')
   change() {
     return {};
   }
 
-  @Delete('id')
+  @Delete(':id')
   delete() {
     return null;
   }
 
-  @Post('id')
+  @Post(':id')
   leave() {
     return null;
   }

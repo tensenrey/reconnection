@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { BroadcastsController } from './broadcasts.controller';
+import { BroadcastsController } from './broadcast.controller';
 
 @Module({
   controllers: [BroadcastsController],

@@ -1,12 +1,14 @@
 import { Module } from '@nestjs/common';
-import { PostsModule } from './posts/posts.module';
-import { BroadcastsModule } from './broadcasts/broadcasts.module';
+import { PostsModule } from './post/post.module';
+import { BroadcastsModule } from './broadcast/broadcast.module';
 import { ChannelGateway } from './channel/channel.gateway';
 import { ConfigModule } from '@nestjs/config';
 import { ChannelController } from './channel/channel.controller';
-import { NotificationsGateway } from './notifications/notifications.gateway';
+import { NotificationsGateway } from './notification/notification.gateway';
 import { ChatGateway } from './chat/chat.gateway';
 import { StreamGateway } from './stream/stream.gateway';
+import { AuthenticationController } from './authentication/authentication.controller';
+import { AuthorizationController } from './authorization/authorization.controller';
 
 @Module({
   imports: [
@@ -17,7 +19,7 @@ import { StreamGateway } from './stream/stream.gateway';
     PostsModule,
     BroadcastsModule,
   ],
-  controllers: [ChannelController],
+  controllers: [ChannelController, AuthenticationController, AuthorizationController],
   providers: [ChannelGateway, NotificationsGateway, ChatGateway, StreamGateway],
 })
 export class AppModule {}

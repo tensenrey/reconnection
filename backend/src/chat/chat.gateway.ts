@@ -13,7 +13,7 @@ export class ChatGateway {
     console.log(`Socket ${socket} edit message ${message}`);
   }
 
-  @SubscribeMessage('remove')
+  @SubscribeMessage('delete')
   handleRemoveMessage(socket: Socket, message: string) {
     console.log(`Socket ${socket} remove message ${message}`);
   }

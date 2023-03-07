@@ -1,7 +1,7 @@
-import { Delete, Controller, Get, Param, Post, Put } from '@nestjs/common';
+import { Delete, Post, Controller, Get, Param, Put } from '@nestjs/common';
 
-@Controller('broadcasts')
-export class BroadcastsController {
+@Controller('post')
+export class PostsController {
   @Get()
   getAll() {
     return [] || undefined;

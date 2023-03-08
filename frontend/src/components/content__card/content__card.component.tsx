@@ -4,7 +4,9 @@ import { Icons } from "@/assets/components/export";
 import { Utils } from "@utils/export";
 import { CoreTypes } from "@/@types/namespaces";
 
-export const ContentCard: FunctionComponent<CoreTypes.Card.IContentCard> = ({ card }) => (
+export const ContentCard: FunctionComponent<CoreTypes.Card.IContentCard> = ({
+  card,
+}) => (
   <div className={s.card}>
     <div className={s.card__poster}></div>
     <b className={s.card__title}>{card.title}</b>

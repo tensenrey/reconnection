@@ -5,7 +5,7 @@ declare module "*.webp" {
 
 declare module "freeice" {
   const freeice: () => RTCIceServer[];
-  export default freeice; 
+  export default freeice;
 }
 
 declare module "*.svg" {

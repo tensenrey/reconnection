@@ -14,7 +14,8 @@ export const ChannelControllerSlice = createSlice({
     },
     ChannelControllerLeaveEvent: (state, action) => {
       state.sockets = state.sockets.filter(
-        (el: CoreTypes.Channel.IChannelClient) => el.socket === action.payload.socket
+        (el: CoreTypes.Channel.IChannelClient) =>
+          el.socket === action.payload.socket
       );
     },
   },

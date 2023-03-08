@@ -5,9 +5,9 @@ import { useTypedSelector } from "@hooks/redux.useTypedSelector";
 import { Modals } from "@modals/export";
 import { CoreTypes } from "@/@types/namespaces";
 
-export const Responsive: FunctionComponent<CoreTypes.Layouting.IResponsiveLayout> = ({
-  children,
-}) => (
+export const Responsive: FunctionComponent<
+  CoreTypes.Layouting.IResponsiveLayout
+> = ({ children }) => (
   <>
     <section className={s.layout}>
       <section className={s.responsive}>{children}</section>
@@ -15,9 +15,9 @@ export const Responsive: FunctionComponent<CoreTypes.Layouting.IResponsiveLayout
   </>
 );
 
-export const ResponsiveNavbar: FunctionComponent<CoreTypes.Layouting.IResponsiveLayout> = ({
-  children,
-}) => {
+export const ResponsiveNavbar: FunctionComponent<
+  CoreTypes.Layouting.IResponsiveLayout
+> = ({ children }) => {
   const payload = useTypedSelector((state) => state.SearchModal);
   return (
     <>

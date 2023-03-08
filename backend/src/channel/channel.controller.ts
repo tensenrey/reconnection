@@ -11,32 +11,32 @@ import {
 @Controller('channel')
 export class ChannelController {
   @Get(':id')
-  getByID(@Param(':id') id: string) {
+  async getByID(@Param(':id') id: string) {
     return id || undefined;
   }
 
   @Post()
-  create() {
+  async create() {
     return {};
   }
 
   @Patch(':id')
-  join() {
+  async join() {
     return {};
   }
 
   @Put(':id')
-  change() {
+  async change() {
     return {};
   }
 
   @Delete(':id')
-  delete() {
+  async delete() {
     return null;
   }
 
   @Post(':id')
-  leave() {
+  async leave() {
     return null;
   }
 }

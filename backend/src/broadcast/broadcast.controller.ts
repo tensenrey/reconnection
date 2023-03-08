@@ -1,29 +1,30 @@
-import { Delete, Controller, Get, Param, Post, Put } from '@nestjs/common';
+import { Delete, Controller, Get, Param, Post, Put, Body } from '@nestjs/common';
+import { BroadcastDTO } from '../dto/broadcast.dto';
 
 @Controller('broadcast')
 export class BroadcastsController {
   @Get()
-  getAll() {
+  async getAll(): Promise<BroadcastDTO[]> {
     return [] || undefined;
   }
 
   @Get(':id')
-  getById(@Param(':id') id: string) {
-    return id || undefined;
+  async getById(@Param(':id') id: string): Promise<BroadcastDTO> {
+    return ;
   }
 
   @Post()
-  create() {
+  async create(@Body() dto: BroadcastDTO) {
     return {};
   }
 
   @Put(':id')
-  change() {
+  async change(@Param(':id') id: string, @Body() dto: BroadcastDTO) {
     return {};
   }
 
   @Delete(':id')
-  delete() {
+  async delete(@Param(':id') id: string) {
     return null;
   }
 }

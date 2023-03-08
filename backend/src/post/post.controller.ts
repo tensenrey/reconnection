@@ -1,29 +1,30 @@
-import { Delete, Post, Controller, Get, Param, Put } from '@nestjs/common';
+import { Delete, Post, Controller, Get, Param, Put, Body } from '@nestjs/common';
+import { PostDTO } from '../dto/post.dto';
 
 @Controller('post')
 export class PostsController {
   @Get()
-  getAll() {
+  async getAll(): Promise<PostDTO[]> {
     return [] || undefined;
   }
 
   @Get(':id')
-  getById(@Param(':id') id: string) {
-    return id || undefined;
+  async getById(@Param(':id') id: string): Promise<PostDTO> {
+    return ;
   }
 
   @Post()
-  create() {
+  async create(@Body() dto: PostDTO) {
     return {};
   }
 
   @Put(':id')
-  change() {
+  async change(@Param(':id') id: string, @Body() dto: PostDTO) {
     return {};
   }
 
   @Delete(':id')
-  delete() {
+  async delete(@Param(':id') id: string) {
     return null;
   }
 }

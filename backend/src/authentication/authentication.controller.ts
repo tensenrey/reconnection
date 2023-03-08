@@ -1,9 +1,10 @@
-import { Controller, Post } from '@nestjs/common';
+import { Controller, Post, Body } from '@nestjs/common';
+import { AuthDTO } from "../dto/auth.dto";
 
 @Controller('authentication')
 export class AuthenticationController {
   @Post()
-  authentication() {
-    return {} || undefined;
+  async authentication(@Body() dto: AuthDTO): Promise<string | undefined> {
+    return "token" || undefined;
   }
 }

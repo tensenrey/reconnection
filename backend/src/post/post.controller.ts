@@ -24,7 +24,7 @@ export class PostsController {
   }
 
   @Delete(':id')
-  async delete(@Param(':id') id: string) {
+  async delete(@Param(':id') id: string): Promise<null> {
     return null;
   }
 }

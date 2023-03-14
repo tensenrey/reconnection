@@ -13,8 +13,11 @@ export class AuthorizationService {
 
   async createUser(dto: AuthDTO) {
     return new this.userModel({
+      username: dto.email,
       email: dto.email,
       hashpass: hashSync(dto.password, genSaltSync(15)),
+      avatar: "",
+      description: "",
     }).save();
   }
 

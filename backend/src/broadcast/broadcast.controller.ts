@@ -1,4 +1,12 @@
-import { Delete, Controller, Get, Param, Post, Put, Body } from '@nestjs/common';
+import {
+  Delete,
+  Controller,
+  Get,
+  Param,
+  Post,
+  Put,
+  Body,
+} from '@nestjs/common';
 import { BroadcastDTO } from '../dto/broadcast.dto';
 
 @Controller('broadcast')
@@ -10,7 +18,7 @@ export class BroadcastsController {
 
   @Get(':id')
   async getById(@Param(':id') id: string): Promise<BroadcastDTO> {
-    return ;
+    return;
   }
 
   @Post()

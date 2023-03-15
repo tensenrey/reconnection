@@ -1,4 +1,12 @@
-import { Delete, Post, Controller, Get, Param, Put, Body } from '@nestjs/common';
+import {
+  Delete,
+  Post,
+  Controller,
+  Get,
+  Param,
+  Put,
+  Body,
+} from '@nestjs/common';
 import { PostDTO } from '../dto/post.dto';
 
 @Controller('post')
@@ -10,7 +18,7 @@ export class PostsController {
 
   @Get(':id')
   async getById(@Param(':id') id: string): Promise<PostDTO> {
-    return ;
+    return;
   }
 
   @Post()

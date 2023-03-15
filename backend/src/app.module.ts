@@ -19,7 +19,7 @@ import { MongoConfig } from './configs/mongo.config';
     TypegooseModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
-      useFactory: MongoConfig
+      useFactory: MongoConfig,
     }),
     PostsModule,
     BroadcastsModule,

@@ -11,17 +11,17 @@ export class AuthorizationService {
     @InjectModel(UserModel) private readonly userModel: ModelType<UserModel>,
   ) {}
 
-  async createUser(dto: AuthDTO) {
+  async createUser(dto: AuthDTO): Promise<UserModel> {
     return new this.userModel({
       username: dto.email,
       email: dto.email,
       hashpass: hashSync(dto.password, genSaltSync(15)),
-      avatar: "",
-      description: "",
+      avatar: null,
+      description: null,
     }).save();
   }
 
-  async findUser(email: string) {
+  async findUser(email: string): Promise<UserModel> {
     return this.userModel.findOne({ email }).exec();
   }
 }

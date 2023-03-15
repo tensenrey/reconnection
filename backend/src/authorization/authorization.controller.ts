@@ -1,7 +1,14 @@
-import { Controller, Post, Body, UsePipes, ValidationPipe, BadRequestException } from '@nestjs/common';
-import { AuthDTO } from "../dto/auth.dto";
+import {
+  Controller,
+  Post,
+  Body,
+  UsePipes,
+  ValidationPipe,
+  BadRequestException,
+} from '@nestjs/common';
+import { AuthDTO } from '../dto/auth.dto';
 import { UserModel } from '../models/user.model';
-import { AuthorizationService } from "./authorization.service";
+import { AuthorizationService } from './authorization.service';
 
 @Controller('authorization')
 export class AuthorizationController {
@@ -9,16 +16,16 @@ export class AuthorizationController {
 
   @UsePipes(new ValidationPipe())
   @Post()
-  async authorization(@Body() dto: AuthDTO) {
+  async authorization(@Body() dto: AuthDTO): Promise<UserModel | Error> {
     const user = await this.authorizationService.findUser(dto.email);
 
     if (user) {
       throw new BadRequestException({
-        message: "Такой пользователь уже существует",
-        result: "fail"
+        message: 'Такой пользователь уже существует',
+        result: 'fail',
       });
     }
 
-    return this.authorizationService.createUser(dto);
+    return await this.authorizationService.createUser(dto);
   }
 }

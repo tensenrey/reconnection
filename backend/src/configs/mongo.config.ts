@@ -5,7 +5,7 @@ export const MongoConfig = async (
   configService: ConfigService,
 ): Promise<TypegooseModuleOptions> => {
   return {
-    uri: configService.get("DATABASE_URI"),
+    uri: configService.get('DATABASE_URI'),
     useNewUrlParser: true,
     useUnifiedTopology: true,
   };

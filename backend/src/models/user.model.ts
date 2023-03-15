@@ -1,8 +1,8 @@
-import { prop } from "@typegoose/typegoose";
-import { Base, TimeStamps } from "@typegoose/typegoose/lib/defaultClasses";
+import { prop } from '@typegoose/typegoose';
+import { Base, TimeStamps } from '@typegoose/typegoose/lib/defaultClasses';
 
 export interface UserModel extends Base { }
-export class UserModel extends TimeStamps { 
+export class UserModel extends TimeStamps {
   @prop()
   username: string;
 
@@ -13,8 +13,8 @@ export class UserModel extends TimeStamps {
   hashpass: string;
 
   @prop()
-  avatar: string;
+  avatar: string | null;
 
   @prop()
-  description: string;
-};
+  description: string | null;
+}

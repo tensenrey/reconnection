@@ -7,16 +7,15 @@ import { AuthorizationService } from './authorization.service';
 @Module({
   controllers: [AuthorizationController],
   imports: [
-  TypegooseModule.forFeature([
-    {
-      typegooseClass: UserModel,
-      schemaOptions: {
-        collection: 'users',
+    TypegooseModule.forFeature([
+      {
+        typegooseClass: UserModel,
+        schemaOptions: {
+          collection: 'users',
+        },
       },
-    },
-  ]),
-],
+    ]),
+  ],
   providers: [AuthorizationService],
-
 })
 export class AuthorizationModule {}

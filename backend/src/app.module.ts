@@ -3,8 +3,7 @@ import { PostsModule } from './post/post.module';
 import { BroadcastsModule } from './broadcast/broadcast.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ChannelModule } from './channel/channel.module';
-import { AuthenticationModule } from './authentication/authentication.module';
-import { AuthorizationModule } from './authorization/authorization.module';
+import { AuthModule } from './auth/auth.module';
 import { NotificationModule } from './notification/notification.module';
 import { ChatModule } from './chat/chat.module';
 import { TypegooseModule } from 'nestjs-typegoose';
@@ -24,8 +23,7 @@ import { MongoConfig } from './configs/mongo.config';
     PostsModule,
     BroadcastsModule,
     ChannelModule,
-    AuthenticationModule,
-    AuthorizationModule,
+    AuthModule,
     NotificationModule,
     ChatModule,
   ],

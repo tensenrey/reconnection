@@ -1,19 +1,27 @@
-import React, { FunctionComponent, ChangeEvent } from "react";
+import React, { FunctionComponent, ChangeEvent, FormEvent } from "react";
 import s from "./login.module.scss";
 import { useActions } from "@hooks/redux.useActions";
 import { useTypedSelector } from "@hooks/redux.useTypedSelector";
+import { useLazySignInQuery } from "@/store/slices/auth/auth.api";
 
 export const Login: FunctionComponent = () => {
+  const [fetchSignIn, { data, isLoading, isError }] = useLazySignInQuery();
   const { AuthChangeEmail, AuthChangePassword } = useActions();
   const payload = useTypedSelector((state) => state.Auth);
-
+  
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    fetchSignIn(payload);
+  }
+  
   return (
     <section className={s.form__layout}>
-      <section className={s.form}>
+      <form className={s.form} onSubmit={handleSubmit}>
         <p className={s.navbar__logo}>reconnection</p>
         <input
           className={s.input}
           type="email"
+          autoComplete="email"
           placeholder="Почта"
           onInput={(e: ChangeEvent<HTMLInputElement>) =>
             AuthChangeEmail(e.target.value)
@@ -22,15 +30,16 @@ export const Login: FunctionComponent = () => {
         <input
           className={s.input}
           type="password"
+          autoComplete="current-password"
           placeholder="Пароль"
           onInput={(e: ChangeEvent<HTMLInputElement>) =>
             AuthChangePassword(e.target.value)
           }
         />
-        <button onClick={() => console.log(payload)} className={s.button}>
+        <button type="submit" className={s.button}>
           Войти
         </button>
-      </section>
+      </form>
     </section>
   );
 };

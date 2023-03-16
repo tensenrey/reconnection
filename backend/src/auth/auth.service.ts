@@ -36,7 +36,6 @@ export class AuthService {
     password: string,
   ): Promise<Pick<UserModel, 'email'>> {
     const user = await this.findUser(email);
-    const isCorrectPassword = await compare(password, user.hashpass);
 
     if (!user) {
       throw new NotFoundException({
@@ -44,6 +43,8 @@ export class AuthService {
         result: 'fail',
       });
     }
+
+    const isCorrectPassword = await compare(password, user.hashpass);
 
     if (!isCorrectPassword) {
       throw new UnauthorizedException('validate error');

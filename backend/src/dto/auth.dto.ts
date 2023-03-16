@@ -6,7 +6,4 @@ export class AuthDTO {
 
   @IsString()
   password: string;
-
-  @IsString()
-  repassword: string;
 }

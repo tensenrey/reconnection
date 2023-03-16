@@ -37,7 +37,12 @@ export class AuthorizationController {
     const user = await this.authService.validateUser(dto.email, dto.password);
 
     return {
-      access__token: await this.authService.signin(user.email),
+      token: await this.authService.signin(user.email),
     };
   }
+
+  @UsePipes(new ValidationPipe())
+  @HttpCode(200)
+  @Post('/session')
+  async session() {}
 }

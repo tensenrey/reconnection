@@ -8,14 +8,17 @@ const config = {
   entry: "./src/index.tsx",
   output: {
     path: path.resolve(__dirname, "..", "backend", "static"),
+    clean: true,
   },
   devtool: "inline-source-map",
   devServer: {
     compress: true,
     port: process.env.PORT || 5555,
     historyApiFallback: true,
-    open: true,
+    open: false,
     hot: true,
+    liveReload: true,
+    devMiddleware: { writeToDisk: true },
   },
   plugins: [
     new HtmlWebpackPlugin({

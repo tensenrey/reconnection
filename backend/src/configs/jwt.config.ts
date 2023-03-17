@@ -5,6 +5,6 @@ export const JwtConfig = async (
   configService: ConfigService,
 ): Promise<JwtModuleOptions> => {
   return {
-    secret: configService.get('JWT_SECRET'),
+    secret: await configService.get('JWT_SECRET'),
   };
 };

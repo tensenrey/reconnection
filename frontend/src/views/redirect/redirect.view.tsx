@@ -8,7 +8,7 @@ export const Redirect: FunctionComponent = () => {
   return (
     <section className={s.redirect__wrapper}>
       <section className={s.redirect__content}>
-        <h3 className={s.redirect__title}>please wait redirect in progress...</h3>
+        <h2 className={s.redirect__title}>please wait redirect in progress...</h2>
         <SpinIcon/>
         <Navigate replace to="auth" />
       </section>

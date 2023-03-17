@@ -48,11 +48,15 @@ export namespace CoreTypes {
       email: string;
       password: string;
     }
+
+    export interface IAuthToken {
+      token: string;
+    }
   }
 
   export namespace Routing {
     export interface IPrivateRoute {
-      children: JSX.Element;
+      children?: JSX.Element;
     }
   }
 

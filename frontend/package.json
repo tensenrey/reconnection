@@ -9,25 +9,24 @@
     "lint": "prettier --write \"./**/*.{js,jsx,ts,tsx,json,scss}\""
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.0",
     "freeice": "^2.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
+    "react-router": "^6.9.0",
     "react-router-dom": "^6.4.3",
-    "@reduxjs/toolkit": "^1.9.0",
     "socket.io-client": "^4.5.4",
     "webpack": "^5.74.0"
   },
   "devDependencies": {
-    "typescript": "^4.8.4",
-    "style-loader": "^3.3.1",
-    "webpack-cli": "^4.10.0",
+    "@types/react-router": "^5.1.20",
     "@types/node": "^18.11.10",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
-    "css-loader": "^6.7.1",
     "@webpack-cli/generators": "^2.5.0",
     "autoprefixer": "^10.4.12",
+    "css-loader": "^6.7.1",
     "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
@@ -36,7 +35,10 @@
     "prettier": "^2.8.4",
     "sass": "^1.55.0",
     "sass-loader": "^13.1.0",
+    "style-loader": "^3.3.1",
     "ts-loader": "^9.4.1",
+    "typescript": "^4.8.4",
+    "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.11.1"
   }
 }

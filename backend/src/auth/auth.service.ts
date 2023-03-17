@@ -18,7 +18,7 @@ export class AuthService {
   ) {}
 
   async createUser(dto: AuthDTO): Promise<UserModel> {
-    return new this.userModel({
+    return await new this.userModel({
       username: dto.email,
       email: dto.email,
       hashpass: await hash(dto.password, await genSalt(15)),
@@ -28,7 +28,7 @@ export class AuthService {
   }
 
   async findUser(email: string): Promise<UserModel> {
-    return this.userModel.findOne({ email }).exec();
+    return await this.userModel.findOne({ email }).exec();
   }
 
   async validateUser(

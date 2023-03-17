@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import "@ui/null.module.scss";
 
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import { View } from "@views/export";
 import { Provider } from "react-redux";
 import { store } from "@store/store";
@@ -28,8 +28,8 @@ const AppRouting: FunctionComponent = () => (
 
 export const AppCore: FunctionComponent = () => (
   <Provider store={store}>
-    <BrowserRouter>
+    <HashRouter>
       <AppRouting />
-    </BrowserRouter>
+    </HashRouter>
   </Provider>
 );

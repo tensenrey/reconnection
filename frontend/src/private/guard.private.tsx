@@ -13,7 +13,7 @@ export const GuardRoute: FunctionComponent<CoreTypes.Routing.IPrivateRoute> = ({
       navigate("/auth");
     }
 
-    if (secret !== null && window.location.pathname === "/auth") {
+    if (secret !== null && window.location.hash === "#/auth") {
       navigate("/@tensenrey");    
     }
   }, [])

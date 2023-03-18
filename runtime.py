@@ -1,6 +1,7 @@
 import os
 import sys
 import subprocess
+import time
 
 
 def main() -> int:
@@ -12,6 +13,9 @@ def main() -> int:
 
     os.chdir("backend")
     subprocess.Popen(["sh", "runtime.sh"], cwd=os.getcwd(),
+                     creationflags=subprocess.CREATE_NEW_CONSOLE)
+
+    subprocess.Popen(["sh", "web.sh"], cwd=os.getcwd(),
                      creationflags=subprocess.CREATE_NEW_CONSOLE)
 
     return 0

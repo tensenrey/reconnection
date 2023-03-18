@@ -21,7 +21,7 @@ export class AuthService {
     return await new this.userModel({
       username: dto.email,
       email: dto.email,
-      hashpass: await hash(dto.password, await genSalt(15)),
+      hashpass: await hash(dto.password, await genSalt(10)),
       avatar: null,
       description: null,
     }).save();

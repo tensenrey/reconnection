@@ -8,8 +8,10 @@ import {
   HttpCode,
 } from '@nestjs/common';
 import { AuthDTO } from '../dto/auth.dto';
+import { SessionDTO } from '../dto/session.dto';
 import { UserModel } from '../models/user.model';
 import { AuthService } from './auth.service';
+import { AccessDTO } from './../dto/access.dto';
 
 @Controller('auth')
 export class AuthorizationController {
@@ -44,5 +46,7 @@ export class AuthorizationController {
   @UsePipes(new ValidationPipe())
   @HttpCode(200)
   @Post('/session')
-  async session() {}
+  async session(@Body() dto: SessionDTO): Promise<AccessDTO> {
+    return await this.authService.session(dto.token);
+  }
 }

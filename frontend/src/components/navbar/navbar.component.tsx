@@ -9,7 +9,9 @@ export const Navbar: FunctionComponent = () => {
 
   return (
     <>
-      <div className={s.call__line} />
+      <Link to="/channel/a1">
+        <div className={s.call__line} />
+      </Link>
       <header className={s.navbar}>
         <div className={s.navbar__menu}>
           <Link

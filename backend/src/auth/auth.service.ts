@@ -2,6 +2,7 @@ import {
   Injectable,
   UnauthorizedException,
   NotFoundException,
+  BadRequestException,
 } from '@nestjs/common';
 import { ModelType } from '@typegoose/typegoose/lib/types';
 import { InjectModel } from 'nestjs-typegoose';
@@ -9,6 +10,7 @@ import { AuthDTO } from '../dto/auth.dto';
 import { UserModel } from '../models/user.model';
 import { compare, genSalt, hash } from 'bcryptjs';
 import { JwtService } from '@nestjs/jwt';
+import { AccessDTO } from './../dto/access.dto';
 
 @Injectable()
 export class AuthService {
@@ -18,13 +20,17 @@ export class AuthService {
   ) {}
 
   async createUser(dto: AuthDTO): Promise<UserModel> {
-    return await new this.userModel({
+    const hashpass = await hash(dto.password, await genSalt(10));
+
+    const user = new this.userModel({
       username: dto.email,
       email: dto.email,
-      hashpass: await hash(dto.password, await genSalt(10)),
+      hashpass,
       avatar: null,
       description: null,
-    }).save();
+    });
+
+    return await user.save();
   }
 
   async findUser(email: string): Promise<UserModel> {
@@ -56,5 +62,15 @@ export class AuthService {
   async signin(email: string): Promise<string> {
     const payload = { email };
     return await this.jwtService.signAsync(payload);
+  }
+
+  async session(token: string): Promise<AccessDTO> {
+    try {
+      const payload = await this.jwtService.verifyAsync(token);
+      const user = await this.findUser(payload.email);
+      return { access: user ? true : false };
+    } catch (e) {
+      throw new BadRequestException(e);
+    }
   }
 }

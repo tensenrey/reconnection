@@ -4,12 +4,12 @@ import { CoreTypes } from "@/@types/namespaces";
 export const AuthApi = createApi({
   reducerPath: "auth/api",
   baseQuery: fetchBaseQuery({
-    baseUrl: "/auth",
+    baseUrl: "/api",
   }),
   endpoints: (build) => ({
     signIn: build.query<CoreTypes.Auth.IAuthToken, CoreTypes.Auth.IAuthSlice>({
       query: (payload) => ({
-        url: "/signin",
+        url: "/auth/signin",
         method: "POST",
         headers: {
           "Content-Type": "application/json",

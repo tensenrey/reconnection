@@ -1,4 +1,9 @@
-import React, { FunctionComponent, ChangeEvent, FormEvent, useEffect } from "react";
+import React, {
+  FunctionComponent,
+  ChangeEvent,
+  FormEvent,
+  useEffect,
+} from "react";
 import s from "./login.module.scss";
 import { useActions } from "@hooks/redux.useActions";
 import { useTypedSelector } from "@hooks/redux.useTypedSelector";
@@ -10,11 +15,11 @@ export const Login: FunctionComponent = () => {
   const [fetchSignIn, { data, isLoading, isError }] = useLazySignInQuery();
   const { AuthChangeEmail, AuthChangePassword } = useActions();
   const payload = useTypedSelector((state) => state.Auth);
-  
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     fetchSignIn(payload);
-  }
+  };
 
   useEffect(() => {
     if (data?.token) {
@@ -22,10 +27,10 @@ export const Login: FunctionComponent = () => {
       navigate("@tensenrey");
     }
   }, [data]);
-  
+
   return (
     <section className={s.form__layout}>
-      <form className={s.form} onSubmit={handleSubmit} method ="POST">
+      <form className={s.form} onSubmit={handleSubmit} method="POST">
         <p className={s.navbar__logo}>reconnection</p>
         <input
           className={s.input}

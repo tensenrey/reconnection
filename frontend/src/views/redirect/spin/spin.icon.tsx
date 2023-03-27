@@ -12,7 +12,10 @@ export const SpinIcon: FunctionComponent = () => {
       </g>
       <defs>
         <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" style={{ stopColor: "rgb(23, 230, 78)", stopOpacity: 1 }} />
+          <stop
+            offset="0%"
+            style={{ stopColor: "rgb(23, 230, 78)", stopOpacity: 1 }}
+          />
           <stop
             offset="100%"
             style={{ stopColor: "rgb(191, 247, 124)", stopOpacity: 1 }}

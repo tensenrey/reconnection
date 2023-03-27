@@ -27,7 +27,8 @@ svg {
     fill: none;
     stroke-dasharray: 0 $path-length;
     stroke-dashoffset: 0;
-    animation: escalade $transition-duration cubic-bezier(0.8, 0, 0.2, 1) infinite;
+    animation: escalade $transition-duration cubic-bezier(0.8, 0, 0.2, 1)
+      infinite;
   }
 }
 

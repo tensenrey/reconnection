@@ -9,7 +9,10 @@ import { Private } from "./private/export";
 
 const AppRouting: FunctionComponent = () => (
   <Routes>
-    <Route path="/auth" element={<Private.GuardRoute children={<View.Login />} />} />
+    <Route
+      path="/auth"
+      element={<Private.GuardRoute children={<View.Login />} />}
+    />
     <Route
       path="/@:username"
       element={<Private.GuardRoute children={<View.Main />} />}

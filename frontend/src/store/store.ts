@@ -6,7 +6,7 @@ import { ContentControllerReducer } from "./slices/controller/controller.slice";
 import { CardDataReducer } from "./slices/data/data.slice";
 import { SearchModalReducer } from "./slices/modal/search.modal.slice";
 import { ChannelControllerReducer } from "./slices/channel/channel.slice";
-import { AuthApi } from './slices/auth/auth.api';
+import { AuthApi } from "./slices/auth/auth.api";
 
 export const store = configureStore({
   reducer: {
@@ -15,9 +15,10 @@ export const store = configureStore({
     CardData: CardDataReducer,
     SearchModal: SearchModalReducer,
     Channel: ChannelControllerReducer,
-    [AuthApi.reducerPath]: AuthApi.reducer
+    [AuthApi.reducerPath]: AuthApi.reducer,
   },
-  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(AuthApi.middleware, thunk),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(AuthApi.middleware, thunk),
 });
 
 export type TypedRootState = ReturnType<typeof store.getState>;

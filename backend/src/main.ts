@@ -5,12 +5,12 @@ import { join } from 'path';
 
 (async () => {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {
-    cors: true
+    cors: true,
   });
 
   app.setGlobalPrefix('api');
   app.useStaticAssets(join(__dirname, '..', 'static'));
   app.setViewEngine('html');
-  
+
   await app.listen(4444, 'localhost');
 })();

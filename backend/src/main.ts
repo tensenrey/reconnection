@@ -9,7 +9,6 @@ import { join } from 'path';
   });
 
   app.setGlobalPrefix('api');
-
   app.useStaticAssets(join(__dirname, '..', 'static'));
   app.setViewEngine('html');
   

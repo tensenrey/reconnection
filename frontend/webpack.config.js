@@ -63,10 +63,8 @@ const config = {
 };
 
 module.exports = () => {
-  if (isProduction) {
-    config.mode = "production";
-  } else {
-    config.mode = "development";
-  }
-  return config;
+  return ({
+    ...config,
+    mode: isProduction ? "production" : "development"
+  });
 };

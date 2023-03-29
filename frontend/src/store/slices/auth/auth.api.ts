@@ -17,7 +17,20 @@ export const AuthApi = createApi({
         body: JSON.stringify(payload),
       }),
     }),
+    session: build.query<
+      CoreTypes.Auth.IAuthSession,
+      CoreTypes.Auth.IAuthToken
+    >({
+      query: (token) => ({
+        url: "/auth/session",
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ token: token }),
+      }),
+    }),
   }),
 });
 
-export const { useLazySignInQuery } = AuthApi;
+export const { useLazySignInQuery, useSessionQuery } = AuthApi;

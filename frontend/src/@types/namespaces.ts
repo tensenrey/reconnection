@@ -52,6 +52,10 @@ export namespace CoreTypes {
     export interface IAuthToken {
       token: string;
     }
+
+    export interface IAuthSession {
+      access: boolean;
+    }
   }
 
   export namespace Routing {

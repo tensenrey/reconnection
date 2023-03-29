@@ -9,6 +9,7 @@ import { useActions } from "@hooks/redux.useActions";
 import { useTypedSelector } from "@hooks/redux.useTypedSelector";
 import { useLazySignInQuery } from "@/store/slices/auth/auth.api";
 import { useNavigate } from "react-router-dom";
+import { Icons } from "@/assets/components/export";
 
 export const Login: FunctionComponent = () => {
   const navigate = useNavigate();
@@ -32,27 +33,36 @@ export const Login: FunctionComponent = () => {
     <section className={s.form__layout}>
       <form className={s.form} onSubmit={handleSubmit} method="POST">
         <p className={s.navbar__logo}>reconnection</p>
-        <input
-          className={s.input}
-          type="email"
-          autoComplete="email"
-          placeholder="Почта"
-          onInput={(e: ChangeEvent<HTMLInputElement>) =>
-            AuthChangeEmail(e.target.value)
-          }
-        />
-        <input
-          className={s.input}
-          type="password"
-          autoComplete="current-password"
-          placeholder="Пароль"
-          onInput={(e: ChangeEvent<HTMLInputElement>) =>
-            AuthChangePassword(e.target.value)
-          }
-        />
-        <button type="submit" className={s.button}>
-          Войти
+        <div className={s.input__icon__group}>
+          <input
+            className={s.input}
+            type="email"
+            autoComplete="email"
+            placeholder="e-mail"
+            onInput={(e: ChangeEvent<HTMLInputElement>) =>
+              AuthChangeEmail(e.target.value)
+            }
+          />
+          <Icons.Email className={s.input__icon} />
+        </div>
+        <div className={s.input__icon__group}>
+          <input
+            className={s.input}
+            type="password"
+            autoComplete="current-password"
+            placeholder="password"
+            onInput={(e: ChangeEvent<HTMLInputElement>) =>
+              AuthChangePassword(e.target.value)
+            }
+          />
+          <Icons.Password className={s.input__icon} />
+        </div>
+        <button type="submit" className={s.button} disabled={isLoading}>
+          {isLoading ? <Icons.Loading className={s.button__loading} /> : "connect"}
         </button>
+        <p className={s.create__account}>
+          Don't have an account? Let's create!
+        </p>
       </form>
     </section>
   );

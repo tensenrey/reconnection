@@ -45,7 +45,7 @@ export class AuthService {
 
     if (!user) {
       throw new NotFoundException({
-        message: 'Такого пользователя не существует',
+        message: 'Login_or_password_error',
         result: 'fail',
       });
     }

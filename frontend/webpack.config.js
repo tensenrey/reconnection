@@ -1,12 +1,15 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const isProduction = process.env.NODE_ENV == "production";
 
 const config = {
   entry: "./src/index.tsx",
   output: {
+    filename: '[name].js',
+    chunkFilename: '[id].[chunkhash].js',
     path: path.resolve(__dirname, "..", "backend", "static"),
     clean: true,
   },
@@ -21,10 +24,17 @@ const config = {
     devMiddleware: { writeToDisk: true },
   },
   plugins: [
+    new CopyPlugin({
+      patterns: [
+        {
+          from: "public/icon",
+          to: path.resolve(__dirname, "..", "backend", "static/icon"),
+        },
+      ],
+    }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
     }),
-
     new MiniCssExtractPlugin(),
   ],
   module: {

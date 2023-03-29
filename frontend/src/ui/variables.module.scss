@@ -5,6 +5,7 @@ $main_blue_color: #00bfff;
 $main_gray_f9_color: #f9f9f9;
 $main_gray_a1_color: #a1a1a1;
 $main_gray_22_color: #222222;
+$main_gray_2220_color: #22222220;
 $main_gray_2208_color: #22222208;
 $main_gray_2b_color: #2b2b2b;
 $main_gray_44_color: #444;
@@ -26,3 +27,8 @@ $main_gradient_call_line_color: linear-gradient(
   rgba(191, 247, 124, 1) 0%,
   rgba(23, 230, 78, 1) 100%
 );
+
+$second_gradient_call_line_color: linear-gradient(270deg,
+  rgba(2, 0, 36, 1) 0%,
+  rgba(191, 247, 124, 1) 0%,
+  rgba(23, 230, 78, 1) 100%);

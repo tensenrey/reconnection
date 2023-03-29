@@ -9,6 +9,9 @@ import { Verify } from "./verify/verify.icon";
 import { Reactions } from "./reactions/reactions.icon";
 import { Close } from "./close/close.icon";
 import { BackArrow } from "./back-arrow/back-arrow.icon";
+import { Email } from "./email/email.icon";
+import { Password } from "./password/password.icon";
+import { Loading } from "./loading/loading.icon";
 
 export const Icons = {
   Broadcast,
@@ -22,4 +25,7 @@ export const Icons = {
   Reactions,
   Close,
   BackArrow,
+  Email,
+  Password,
+  Loading
 };

@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from "react";
 import s from "./redirect.module.scss";
-
 import { Navigate } from "react-router-dom";
 import { SpinIcon } from "./spin/spin.icon";
 

@@ -1,6 +1,5 @@
 import React, {
   FunctionComponent,
-  ChangeEvent,
   FormEvent,
   useEffect,
 } from "react";
@@ -10,10 +9,11 @@ import { useTypedSelector } from "@hooks/redux.useTypedSelector";
 import { useLazySignInQuery } from "@/store/slices/auth/auth.api";
 import { useNavigate } from "react-router-dom";
 import { Icons } from "@/assets/components/export";
+import { UI } from "@ui/export";
 
 export const Login: FunctionComponent = () => {
   const navigate = useNavigate();
-  const [fetchSignIn, { data, isLoading, isError }] = useLazySignInQuery();
+  const [fetchSignIn, { data, isLoading }] = useLazySignInQuery();
   const { AuthChangeEmail, AuthChangePassword } = useActions();
   const payload = useTypedSelector((state) => state.Auth);
 
@@ -33,33 +33,21 @@ export const Login: FunctionComponent = () => {
     <section className={s.form__layout}>
       <form className={s.form} onSubmit={handleSubmit} method="POST">
         <p className={s.navbar__logo}>reconnection</p>
-        <div className={s.input__icon__group}>
-          <input
-            className={s.input}
-            type="email"
-            autoComplete="email"
-            placeholder="e-mail"
-            onInput={(e: ChangeEvent<HTMLInputElement>) =>
-              AuthChangeEmail(e.target.value)
-            }
-          />
-          <Icons.Email className={s.input__icon} />
-        </div>
-        <div className={s.input__icon__group}>
-          <input
-            className={s.input}
-            type="password"
-            autoComplete="current-password"
-            placeholder="password"
-            onInput={(e: ChangeEvent<HTMLInputElement>) =>
-              AuthChangePassword(e.target.value)
-            }
-          />
-          <Icons.Password className={s.input__icon} />
-        </div>
-        <button type="submit" className={s.button} disabled={isLoading}>
-          {isLoading ? <Icons.Loading className={s.button__loading} /> : "connect"}
-        </button>
+        <UI.Input
+          autoComplete="email"
+          placeholder="e-mail"
+          icon={<Icons.Email className={s.input__icon} />}
+          callback={AuthChangeEmail}
+          type="email"
+        />
+        <UI.Input
+          autoComplete="current-password"
+          placeholder="password"
+          icon={<Icons.Password className={s.input__icon} />}
+          callback={AuthChangePassword}
+          type="password"
+        />
+        <UI.Button text="connect" isLoading={isLoading} />
         <p className={s.create__account}>
           Don't have an account? Let's create!
         </p>

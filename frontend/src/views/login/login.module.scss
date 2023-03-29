@@ -9,27 +9,6 @@
   background-color: #f9f9f9;
 }
 
-.input {
-  width: 250px;
-  height: 50px;
-  padding-top: 5px;
-  padding-left: 30px;
-  font-size: 16px;
-  font-weight: normal;
-  color: $main_gray_2280_color;
-  border-bottom: 2px solid $main_gray_2220_color;
-}
-
-.input::placeholder {
-  color: $main_gray_a1_color;
-}
-
-.input:focus {
-  color: $main_black_color;
-  border-bottom: 2px solid $main_black_color;
-  font-weight: bold;
-}
-
 .form {
   background-color: #fff;
   display: flex;
@@ -42,49 +21,10 @@
   flex-direction: column;
 }
 
-.button {
-  width: 250px;
-  height: 50px;
-  border-radius: 5px;
-  background: $main_black_color;
-  color: $main_white_color;
-  font-size: 16px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-.button:disabled {
-  cursor:default;
-  background-color: $main_white_smoky_ee90_color;
-}
-
-.button:disabled:hover {
-  background-color: $main_white_smoky_ee90_color;
-}
-
-.button:hover {
-  background-color: $main_black_95_color;
-}
-
 .navbar__logo {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
-}
-
-.input__icon__group {
-  width: 250px;
-  height: 50px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  position: relative;
 }
 
 .input__icon {
@@ -94,30 +34,13 @@
   top: 15px;
 }
 
-.input:focus ~ .input__icon {
-    opacity: 0.6;
-}
-
 .create__account {
   font-size: 15px;
   width: 250px;
   cursor: pointer;
+  user-select: none;
 }
 
 .create__account:hover {
   text-decoration: underline;
-}
-
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.button__loading {
-  animation: rotation 1s infinite linear;
 }

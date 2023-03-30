@@ -1,0 +1,35 @@
+.form {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: 470px;
+  border-radius: 30px;
+  gap: 30px;
+  flex-direction: column;
+}
+
+.navbar__logo {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.input__icon {
+  position: absolute;
+  left: 0;
+  opacity: 0.4;
+  top: 15px;
+}
+
+.create__account {
+  font-size: 15px;
+  width: 250px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.create__account:hover {
+  text-decoration: underline;
+}

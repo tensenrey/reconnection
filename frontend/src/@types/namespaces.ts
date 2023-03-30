@@ -44,11 +44,17 @@ export namespace CoreTypes {
   }
 
   export namespace Auth {
-    export interface IAuthSlice {
+    export interface ISignInSlice {
       email: string;
       password: string;
     }
 
+    export interface ISignUpSlice {
+      email: string;
+      password: string;
+      repassword: string;
+    }
+    
     export interface IAuthToken {
       token: string;
     }

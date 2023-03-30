@@ -19,7 +19,7 @@ export class AuthorizationController {
 
   @UsePipes(new ValidationPipe())
   @Post('/signup')
-  async signUp(@Body() dto: AuthDTO): Promise<UserModel> {
+  async signUp(@Body() dto: AuthDTO): Promise<Record<string, string>> {
     const user = await this.authService.findUser(dto.email);
 
     if (user) {
@@ -29,7 +29,11 @@ export class AuthorizationController {
       });
     }
 
-    return await this.authService.createUser(dto);
+    const newUser = await this.authService.createUser(dto);
+
+    return {
+      token: await this.authService.signin(newUser.email),
+    };
   }
 
   @UsePipes(new ValidationPipe())

@@ -1,6 +1,7 @@
 export namespace CoreTypes {
   export namespace Card {
     export interface ICardData {
+      id: string;
       title: string;
       author: string;
       views: number;

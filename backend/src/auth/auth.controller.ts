@@ -9,7 +9,6 @@ import {
 } from '@nestjs/common';
 import { AuthDTO } from '../dto/auth.dto';
 import { SessionDTO } from '../dto/session.dto';
-import { UserModel } from '../models/user.model';
 import { AuthService } from './auth.service';
 import { AccessDTO } from './../dto/access.dto';
 

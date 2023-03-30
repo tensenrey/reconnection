@@ -19,7 +19,7 @@ export const SignUpSlice = createSlice({
     },
     SignUpChangeRepassoword: (state, action) => {
       state.repassword = action.payload;
-    }
+    },
   },
 });
 

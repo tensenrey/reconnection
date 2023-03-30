@@ -15,12 +15,12 @@ export const SignUpForm: FunctionComponent<ISignUpFormPayload> = ({
   changeMode,
 }) => {
   const navigate = useNavigate();
-  
+
   const [fetchSignUp, { data, isLoading }] = useLazySignUpQuery();
-  
+
   const { SignUpChangeEmail, SignUpChangePassword, SignUpChangeRepassoword } =
     useActions();
-  
+
   const payload = useTypedSelector((state) => state.SignUp);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {

@@ -13,5 +13,5 @@ export const Component = {
   ContentCard,
   SearchCard,
   SignInForm,
-  SignUpForm
+  SignUpForm,
 };

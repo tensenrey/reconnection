@@ -1,12 +1,22 @@
-import React, { FunctionComponent, ChangeEvent, InputHTMLAttributes } from "react";
+import React, {
+  FunctionComponent,
+  ChangeEvent,
+  InputHTMLAttributes,
+} from "react";
 import s from "./input.module.scss";
 
 interface IInputPayload extends InputHTMLAttributes<HTMLInputElement> {
   callback: Function;
-  icon: JSX.Element
+  icon: JSX.Element;
 }
 
-export const Input: FunctionComponent<IInputPayload> = ({ icon, callback, type, autoComplete, placeholder }) => {
+export const Input: FunctionComponent<IInputPayload> = ({
+  icon,
+  callback,
+  type,
+  autoComplete,
+  placeholder,
+}) => {
   return (
     <div className={s.input__icon__group}>
       <input
@@ -15,11 +25,9 @@ export const Input: FunctionComponent<IInputPayload> = ({ icon, callback, type, 
         autoComplete={autoComplete}
         placeholder={placeholder}
         required
-        onInput={(e: ChangeEvent<HTMLInputElement>) =>
-          callback(e.target.value)
-        }
+        onInput={(e: ChangeEvent<HTMLInputElement>) => callback(e.target.value)}
       />
-      { icon }
+      {icon}
     </div>
   );
-}
+};

@@ -8,8 +8,8 @@ const isProduction = process.env.NODE_ENV == "production";
 const config = {
   entry: "./src/index.tsx",
   output: {
-    filename: '[name].js',
-    chunkFilename: '[id].[chunkhash].js',
+    filename: "[name].js",
+    chunkFilename: "[id].[chunkhash].js",
     path: path.resolve(__dirname, "..", "backend", "static"),
     clean: true,
   },

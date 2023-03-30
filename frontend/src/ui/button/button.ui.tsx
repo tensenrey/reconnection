@@ -9,7 +9,7 @@ interface IButtonPayload {
 
 export const Button: FunctionComponent<IButtonPayload> = ({
   text,
-  isLoading
+  isLoading,
 }) => {
   return (
     <button type="submit" className={s.button} disabled={isLoading}>

@@ -31,7 +31,6 @@
   position: relative;
 }
 
-input:focus~img {
+input:focus ~ img {
   opacity: 0.6;
 }
-

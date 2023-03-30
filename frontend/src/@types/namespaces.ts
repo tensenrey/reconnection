@@ -54,7 +54,7 @@ export namespace CoreTypes {
       password: string;
       repassword: string;
     }
-    
+
     export interface IAuthToken {
       token: string;
     }

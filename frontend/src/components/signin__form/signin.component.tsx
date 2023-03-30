@@ -8,10 +8,12 @@ import { Icons } from "@/assets/components/export";
 import { UI } from "@ui/export";
 
 interface ISignInFormPayload {
-  changeMode: Function
+  changeMode: Function;
 }
 
-export const SignInForm: FunctionComponent<ISignInFormPayload> = ({ changeMode }) => {
+export const SignInForm: FunctionComponent<ISignInFormPayload> = ({
+  changeMode,
+}) => {
   const navigate = useNavigate();
   const [fetchSignIn, { data, isLoading }] = useLazySignInQuery();
   const { SignInChangeEmail, SignInChangePassword } = useActions();
@@ -47,7 +49,9 @@ export const SignInForm: FunctionComponent<ISignInFormPayload> = ({ changeMode }
         type="password"
       />
       <UI.Button text="connect" isLoading={isLoading} />
-      <p className={s.create__account} onClick={() => changeMode(false)}>Don't have an account? Let's create!</p>
+      <p className={s.create__account} onClick={() => changeMode(false)}>
+        Don't have an account? Let's create!
+      </p>
     </form>
   );
 };

@@ -27,5 +27,5 @@ export const Icons = {
   BackArrow,
   Email,
   Password,
-  Loading
+  Loading,
 };

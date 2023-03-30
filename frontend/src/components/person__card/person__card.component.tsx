@@ -24,7 +24,7 @@ export const PersonCard: FunctionComponent = () => {
             <div>
               <b className={s.username}>{username}</b>
               <ul className={s.social}>
-                <li className={s.social__link}>Subscribe</li>
+                <li className={s.social__link}>subscribe</li>
               </ul>
             </div>
           </div>

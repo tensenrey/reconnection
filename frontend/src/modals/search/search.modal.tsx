@@ -18,7 +18,7 @@ export const Search: FunctionComponent = () => {
               <div className={s.search__container}>
                 <input
                   className={s.search__input}
-                  placeholder="Поиск"
+                  placeholder="Search"
                   type="text"
                   autoFocus
                 />

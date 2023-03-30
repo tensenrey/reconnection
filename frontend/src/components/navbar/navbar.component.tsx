@@ -26,7 +26,7 @@ export const Navbar: FunctionComponent = () => {
             className={`${s.navbar__menu__item} ${s.navbar__menu__input}`}
             onClick={() => SearchModalChangeShow(true)}
           >
-            поиск
+            Search
           </a>
         </div>
         <div className={s.user__content}>

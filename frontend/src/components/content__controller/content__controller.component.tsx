@@ -12,29 +12,6 @@ export const ContentController: FunctionComponent = () => {
     CardDataChangePayload,
   } = useActions();
 
-  useEffect(() => {
-    CardDataChangePayload([
-      {
-        title: "Post title",
-        author: "@centenario",
-        views: "100",
-        type: "post",
-      },
-      {
-        title: "Post title 3123123123",
-        author: "@centenario",
-        views: "100",
-        type: "post",
-      },
-      {
-        title: "Post title 3122222222",
-        author: "@centenario",
-        views: "1234567",
-        type: "post",
-      },
-    ]);
-  }, []);
-
   return (
     <section className={s.content__control__container}>
       <ul className={s.content__control}>
@@ -49,31 +26,9 @@ export const ContentController: FunctionComponent = () => {
             )
           }
           onMouseMove={() => ContentControllerChangeTransform(0)}
-          onClick={() => {
-            ContentControllerChangeLayout("posts");
-            CardDataChangePayload([
-              {
-                title: "Post title",
-                author: "@centenario",
-                views: "100",
-                type: "post",
-              },
-              {
-                title: "Post title 3123123123",
-                author: "@centenario",
-                views: "100",
-                type: "post",
-              },
-              {
-                title: "Post title 3122222222",
-                author: "@centenario",
-                views: 2234567,
-                type: "post",
-              },
-            ]);
-          }}
+          onClick={() => ContentControllerChangeLayout("posts")}
         >
-          Публикации
+          Posts
           <Icons.Post
             className={payload.currentLayout !== "posts" ? s.disabled : ""}
           />
@@ -89,31 +44,9 @@ export const ContentController: FunctionComponent = () => {
             )
           }
           onMouseMove={() => ContentControllerChangeTransform(200)}
-          onClick={() => {
-            ContentControllerChangeLayout("broadcast");
-            CardDataChangePayload([
-              {
-                title: "Broadcast title",
-                author: "@centenario",
-                views: "100",
-                type: "broadcast",
-              },
-              {
-                title: "Broadcast title 3123123123",
-                author: "@centenario",
-                views: "100",
-                type: "broadcast",
-              },
-              {
-                title: "Broadcast title 3122222222",
-                author: "@centenario",
-                views: 200000,
-                type: "broadcast",
-              },
-            ]);
-          }}
+          onClick={() => ContentControllerChangeLayout("broadcast")}
         >
-          Эфиры
+          Broadcasts
           <Icons.Broadcast
             className={payload.currentLayout !== "broadcast" ? s.disabled : ""}
           />

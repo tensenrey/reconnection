@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "description": "My webpack project",
+  "author": "DmitryqV",
   "name": "my-webpack-project",
   "homepage": "https://dmitryqv.github.io/universe/",
   "scripts": {

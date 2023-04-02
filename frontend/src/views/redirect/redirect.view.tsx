@@ -3,7 +3,7 @@ import s from "./redirect.module.scss";
 import { SpinIcon } from "./spin/spin.icon";
 
 interface IRedirectPayload {
-  children: JSX.Element;
+  children?: JSX.Element;
 }
 
 export const Redirect: FunctionComponent<IRedirectPayload> = ({ children }) => (
@@ -11,7 +11,7 @@ export const Redirect: FunctionComponent<IRedirectPayload> = ({ children }) => (
     <section className={s.redirect__content}>
       <h2 className={s.redirect__title}>please wait redirect in progress...</h2>
       <SpinIcon />
-      {children}
+      {children || null}
     </section>
   </section>
 );

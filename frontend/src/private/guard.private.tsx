@@ -33,7 +33,7 @@ export const GuardedRoute: FunctionComponent<any> = ({
   }, [location]);
 
   return state.isLoading ? (
-    <Redirect children={<></>} />
+    <Redirect />
   ) : state.access ? (
     <Component />
   ) : (

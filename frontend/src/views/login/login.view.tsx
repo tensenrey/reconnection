@@ -19,8 +19,10 @@ export const Login: FunctionComponent = () => {
     });
 
     if (session.ok === true) {
-      navigate("/@tensenrey");
+      return navigate("/@tensenrey");
     }
+
+    localStorage.clear();
   };
 
   useLayoutEffect(() => {

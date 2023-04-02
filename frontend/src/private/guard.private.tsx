@@ -26,6 +26,7 @@ export const GuardedRoute: FunctionComponent<any> = ({
     }
 
     seState({ isLoading: false, access: false });
+    localStorage.clear();
   };
 
   useLayoutEffect(() => {

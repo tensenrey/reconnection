@@ -1,4 +1,9 @@
 export namespace CoreTypes {
+  export namespace Redirect {
+    export interface IRedirectPayload {
+      children?: JSX.Element;
+    }
+  }
   export namespace Card {
     export interface ICardData {
       id: string;

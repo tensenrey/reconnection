@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import "@ui/null.module.scss";
 
-import { Routes, Route, HashRouter } from "react-router-dom";
+import { Routes, Route, HashRouter, Navigate } from "react-router-dom";
 import { View } from "@views/export";
 import { Provider } from "react-redux";
 import { store } from "@store/store";
@@ -9,23 +9,23 @@ import { Private } from "./private/export";
 
 const AppRouting: FunctionComponent = () => (
   <Routes>
-    <Route
-      path="/auth"
-      element={<Private.GuardRoute children={<View.Login />} />}
-    />
+    <Route path="/auth" element={<View.Login />} />
     <Route
       path="/@:username"
-      element={<Private.GuardRoute children={<View.Main />} />}
+      element={<Private.GuardedRoute component={View.Main} />}
     />
     <Route
       path="/channel/:channelID"
-      element={<Private.GuardRoute children={<View.Channel />} />}
+      element={<Private.GuardedRoute component={View.Channel} />}
     />
     <Route
       path="/news"
-      element={<Private.GuardRoute children={<View.News />} />}
+      element={<Private.GuardedRoute component={View.News} />}
     />
-    <Route path="*" element={<View.Redirect />} />
+    <Route
+      path="*"
+      element={<View.Redirect children={<Navigate replace to="auth" />} />}
+    />
   </Routes>
 );
 

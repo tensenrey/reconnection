@@ -27,7 +27,7 @@ export const SignInForm: FunctionComponent<ISignInFormPayload> = ({
   useEffect(() => {
     if (data?.token) {
       localStorage.setItem("secret", data.token);
-      navigate("@tensenrey");
+      navigate("/@tensenrey");
     }
   }, [data]);
 

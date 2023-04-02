@@ -1,22 +1,42 @@
-import React, { FunctionComponent, useEffect } from "react";
-import { CoreTypes } from "@/@types/namespaces";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState, FunctionComponent } from "react";
+import { Navigate, useLocation } from "react-router-dom";
+import { Redirect } from "@/views/redirect/redirect.view";
 
-export const GuardRoute: FunctionComponent<CoreTypes.Routing.IPrivateRoute> = ({
-  children,
+export const GuardedRoute: FunctionComponent<any> = ({
+  component: Component,
 }) => {
-  const secret = localStorage.getItem("secret");
-  const navigate = useNavigate();
+  const location = useLocation();
+  const [state, seState] = useState({
+    isLoading: true,
+    access: false,
+  });
+
+  const handler = async () => {
+    const session = await fetch("/api/auth/session", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ token: localStorage.getItem("secret") }),
+    });
+
+    if (session.ok === true) {
+      const access = await session.json();
+      return seState({ isLoading: false, access });
+    }
+
+    seState({ isLoading: false, access: false });
+  };
 
   useEffect(() => {
-    if (secret === null) {
-      navigate("/auth");
-    }
+    handler();
+  }, [location]);
 
-    if (secret !== null && window.location.hash === "#/auth") {
-      navigate("/@tensenrey");
-    }
-  }, []);
-
-  return <>{children}</>;
+  return state.isLoading ? (
+    <Redirect children={<></>} />
+  ) : state.access ? (
+    <Component />
+  ) : (
+    <Navigate to="/login" />
+  );
 };

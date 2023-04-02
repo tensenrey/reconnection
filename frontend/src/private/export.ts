@@ -1,5 +1,5 @@
-import { GuardRoute } from "./guard.private";
+import { GuardedRoute } from "./guard.private";
 
 export const Private = {
-  GuardRoute,
+  GuardedRoute,
 };

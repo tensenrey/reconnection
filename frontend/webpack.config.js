@@ -3,9 +3,10 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
-const isProduction = process.env.NODE_ENV == "production";
+const mode = process.env.NODE_ENV === "production" ? "production" : "development";
 
 const config = {
+  mode,
   entry: "./src/index.tsx",
   output: {
     filename: "[name].js",
@@ -49,7 +50,21 @@ const config = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
+        use: [
+          mode ? "style-loader" : MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                auto: (resPath) => Boolean(resPath.includes(".module.")),
+                localIdentName: mode
+                  ? "[path][name]__[local]--[hash:base64:5]"
+                  : "[hash:base64:8]",
+              },
+            },
+          },
+          "sass-loader",
+        ],
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
@@ -78,6 +93,5 @@ const config = {
 module.exports = () => {
   return {
     ...config,
-    mode: isProduction ? "production" : "development",
   };
 };

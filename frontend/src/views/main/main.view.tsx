@@ -7,6 +7,7 @@ import { CoreTypes } from "@/@types/namespaces";
 
 export const Main: FunctionComponent = () => {
   const payload = useTypedSelector((state) => state.CardData);
+
   return (
     <Layout.ResponsiveNavbar>
       <section className={s.main}>

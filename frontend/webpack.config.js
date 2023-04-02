@@ -35,7 +35,10 @@ const config = {
     new HtmlWebpackPlugin({
       template: "./public/index.html",
     }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "css/[name].[contenthash:8].css",
+      chunkFilename: "css/[name].[contenthash:8].css",
+    }),
   ],
   module: {
     rules: [

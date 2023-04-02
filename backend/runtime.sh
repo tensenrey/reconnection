@@ -1,1 +1,1 @@
-yarn start:dev
+rm -rf static && yarn start:dev

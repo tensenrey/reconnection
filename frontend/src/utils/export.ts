@@ -1,2 +1,4 @@
 import { numberParser } from "./numberParser.util";
-export const Utils = { numberParser };
+import { JWTDecoder } from './JWTDecoder.util';
+
+export const Utils = { numberParser, JWTDecoder };

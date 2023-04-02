@@ -1,9 +1,34 @@
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent, useState, useLayoutEffect } from "react";
 import s from "./login.module.scss";
+
+import { useNavigate, useLocation } from "react-router-dom";
 import { Component } from "@components/export";
 
 export const Login: FunctionComponent = () => {
   const [haveAccount, setHaveAccount] = useState<boolean>(true);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handler = async () => {
+    const session = await fetch("/api/auth/session", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ token: localStorage.getItem("secret") }),
+    });
+
+    if (session.ok === true) {
+      navigate("/@tensenrey");
+    }
+  };
+
+  useLayoutEffect(() => {
+    if (localStorage.getItem("secret") !== null) {
+      handler();
+    }
+  }, [location]);
+
   return (
     <section className={s.form__layout}>
       {haveAccount ? (

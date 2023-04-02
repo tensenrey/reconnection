@@ -6,7 +6,7 @@ export const GuardedRoute: FunctionComponent<any> = ({
   component: Component,
 }) => {
   const location = useLocation();
-  const [state, seState] = useState({
+  const [state, setState] = useState({
     isLoading: true,
     access: false,
   });
@@ -22,10 +22,10 @@ export const GuardedRoute: FunctionComponent<any> = ({
 
     if (session.ok === true) {
       const access = await session.json();
-      return seState({ isLoading: false, access });
+      return setState({ isLoading: false, access });
     }
 
-    seState({ isLoading: false, access: false });
+    setState({ isLoading: false, access: false });
     localStorage.clear();
   };
 

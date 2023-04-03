@@ -27,9 +27,9 @@ export const PersonCard: FunctionComponent = () => {
               ) : (
                 <div className={s.avatar}>{data?.username![0]}</div>
               )}
-              <div className={s.verify}>
+              {/* <div className={s.verify}>
                 <Icons.Verify />
-              </div>
+              </div> */}
             </div>
             <div>
               <b className={s.username}>{data?.username}</b>

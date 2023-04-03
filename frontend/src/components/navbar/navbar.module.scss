@@ -50,8 +50,15 @@
 .avatar {
   width: 48px;
   height: 48px;
-  background-color: $main_gray_2b_color;
   border-radius: 50%;
+  background-color: $main_gray_2208_color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 32px;
+  text-transform: uppercase;
+  color: $main_black_2170_color;
 }
 
 .navbar__menu {

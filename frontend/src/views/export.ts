@@ -1,12 +1,12 @@
 import { Redirect } from "./redirect/redirect.view";
 import { Login } from "./login/login.view";
-import { Main } from "./main/main.view";
+import { Profile } from "./profile/profile.view";
 import { Channel } from "./channel/channel.view";
 import { News } from "./news/news.view";
 
 export const View = {
   Channel,
-  Main,
+  Profile,
   Login,
   Redirect,
   News,

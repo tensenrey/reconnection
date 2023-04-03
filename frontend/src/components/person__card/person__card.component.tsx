@@ -1,11 +1,20 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useLayoutEffect } from "react";
 import s from "./person__card.module.scss";
-import { useParams } from "react-router-dom";
+import { useUserQuery } from "@/store/slices/api/user.api";
 import { Icons } from "@assets/components/export";
 import { Utils } from "@utils/export";
+import { useActions } from "@/hooks/redux.useActions";
 
 export const PersonCard: FunctionComponent = () => {
-  const { username } = useParams();
+  const jwt = Utils.JWTDecoder(localStorage.getItem("secret")!);
+  const { UserSetPayload } = useActions();
+  const { data } = useUserQuery(jwt.id);
+
+  useLayoutEffect(() => {
+    if (data !== undefined) {
+      UserSetPayload(data);
+    }
+  }, [data]);
 
   return (
     <section className={s.poster}>
@@ -13,16 +22,13 @@ export const PersonCard: FunctionComponent = () => {
         <div className={s.user__group}>
           <div className={s.user__meta__info}>
             <div className={s.avatar__wrapper}>
-              <img
-                className={s.avatar}
-                src={require("@assets/img/avatar.jpg")}
-              />
+              {data?.avatar ? <img className={s.avatar} src={data.avatar} /> : <div className={s.avatar}>{data?.username![0]}</div>}
               <div className={s.verify}>
                 <Icons.Verify />
               </div>
             </div>
             <div>
-              <b className={s.username}>{username}</b>
+              <b className={s.username}>{data?.username}</b>
               <ul className={s.social}>
                 <li className={s.social__link}>subscribe</li>
               </ul>
@@ -43,8 +49,9 @@ export const PersonCard: FunctionComponent = () => {
             </li>
           </ul>
           <p className={s.user__description}>
-            Когда мне придет время быть счастливым, я отправлюсь в могилу и
-            исполню свой долг.
+            {/* Когда мне придет время быть счастливым, я отправлюсь в могилу и
+            исполню свой долг. */}
+            {data?.description}
           </p>
         </div>
       </div>

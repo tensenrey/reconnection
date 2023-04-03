@@ -2,10 +2,11 @@ import React, { FunctionComponent } from "react";
 import { useParams, Link } from "react-router-dom";
 import s from "./navbar.module.scss";
 import { useActions } from "@hooks/redux.useActions";
+import { useTypedSelector } from "@/hooks/redux.useTypedSelector";
 
 export const Navbar: FunctionComponent = () => {
+  const payload = useTypedSelector((state) => state.User);
   const { SearchModalChangeShow } = useActions();
-  const { username } = useParams();
 
   return (
     <>
@@ -30,14 +31,11 @@ export const Navbar: FunctionComponent = () => {
           </a>
         </div>
         <div className={s.user__content}>
-          <Link to={`/@${username}`} className={s.username}>
-            {"undefined"}
+          <Link to={`/@${payload?.user.username}`} className={s.username}>
+            {payload?.user.username}
           </Link>
-          <img
-            className={s.avatar}
-            src={require("../../assets/img/avatar.jpg")}
-            alt={username}
-          />
+          {payload.user?.avatar !== null && <img className={s.avatar} src={payload.user.avatar} />}
+          {payload.user?.username && <div className={s.avatar}>{payload.user?.username![0]}</div>}
         </div>
       </header>
     </>

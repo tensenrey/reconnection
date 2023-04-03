@@ -8,6 +8,7 @@ import { NotificationModule } from './notification/notification.module';
 import { ChatModule } from './chat/chat.module';
 import { TypegooseModule } from 'nestjs-typegoose';
 import { MongoConfig } from './configs/mongo.config';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { MongoConfig } from './configs/mongo.config';
     AuthModule,
     NotificationModule,
     ChatModule,
+    UserModule,
   ],
   controllers: [],
   providers: [],

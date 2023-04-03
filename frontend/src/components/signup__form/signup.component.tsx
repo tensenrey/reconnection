@@ -6,6 +6,7 @@ import { useLazySignUpQuery } from "@/store/slices/api/auth.api";
 import { useNavigate } from "react-router-dom";
 import { Icons } from "@/assets/components/export";
 import { UI } from "@ui/export";
+import { Utils } from "@/utils/export";
 
 interface ISignUpFormPayload {
   changeMode: Function;
@@ -31,7 +32,8 @@ export const SignUpForm: FunctionComponent<ISignUpFormPayload> = ({
   useEffect(() => {
     if (data?.token) {
       localStorage.setItem("secret", data.token);
-      navigate("/@tensenrey");
+      const { id } = Utils.JWTDecoder(data.token);
+      navigate(`/${id}`);
     }
   }, [data]);
 

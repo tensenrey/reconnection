@@ -60,8 +60,8 @@ export class AuthService {
   }
 
   async signin(email: string): Promise<string> {
-    const payload = { email };
-    return await this.jwtService.signAsync(payload);
+    const user = await this.findUser(email);
+    return await this.jwtService.signAsync({ email: user.email, id: user.id });
   }
 
   async session(token: string): Promise<AccessDTO> {

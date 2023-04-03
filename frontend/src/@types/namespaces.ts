@@ -1,9 +1,23 @@
 export namespace CoreTypes {
+  export namespace User {
+    export interface IUserSource {
+      id: string | null;
+      username: string | null;
+      email: string | null;
+      avatar: string | null;
+      description: string | null;
+    }
+    export interface UserDTO {
+      user: IUserSource
+    }
+  }
+
   export namespace Redirect {
     export interface IRedirectPayload {
       children?: JSX.Element;
     }
   }
+
   export namespace Card {
     export interface ICardData {
       id: string;

@@ -22,6 +22,14 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
+  background-color: $main_gray_2208_color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 64px;
+  text-transform: uppercase;
+  color: $main_black_2170_color;
 }
 
 .user__group {

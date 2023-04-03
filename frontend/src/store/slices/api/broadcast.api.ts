@@ -19,10 +19,7 @@ export const BroadcastApi = createApi({
         method: "GET",
       }),
     }),
-    postCard: build.query<
-      CoreTypes.Card.ICardData,
-      Pick<CoreTypes.Card.ICardData, "id">
-    >({
+    postCard: build.query<CoreTypes.Card.ICardData, Pick<CoreTypes.Card.ICardData, "id">>({
       query: (payload) => ({
         url: `/broadcast`,
         method: "POST",
@@ -32,10 +29,7 @@ export const BroadcastApi = createApi({
         body: JSON.stringify({ payload }),
       }),
     }),
-    putCardById: build.query<
-      CoreTypes.Card.ICardData,
-      CoreTypes.Card.ICardData
-    >({
+    putCardById: build.query<CoreTypes.Card.ICardData, CoreTypes.Card.ICardData>({
       query: (payload) => ({
         url: `/broadcast/${payload.id}`,
         method: "PUT",

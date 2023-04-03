@@ -11,8 +11,8 @@ const AppRouting: FunctionComponent = () => (
   <Routes>
     <Route path="/auth" element={<View.Login />} />
     <Route
-      path="/@:username"
-      element={<Private.GuardedRoute component={View.Main} />}
+      path="/:id"
+      element={<Private.GuardedRoute component={View.Profile} />}
     />
     <Route
       path="/channel/:channelID"

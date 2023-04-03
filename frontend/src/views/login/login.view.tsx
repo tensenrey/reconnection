@@ -3,8 +3,10 @@ import s from "./login.module.scss";
 
 import { useNavigate, useLocation } from "react-router-dom";
 import { Component } from "@components/export";
+import { Utils } from "@/utils/export";
 
 export const Login: FunctionComponent = () => {
+  const token = localStorage.getItem("secret");
   const [haveAccount, setHaveAccount] = useState<boolean>(true);
   const navigate = useNavigate();
   const location = useLocation();
@@ -15,11 +17,12 @@ export const Login: FunctionComponent = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ token: localStorage.getItem("secret") }),
+      body: JSON.stringify({ token }),
     });
 
     if (session.ok === true) {
-      return navigate("/@tensenrey");
+      const { id } = Utils.JWTDecoder(token!);
+      return navigate(`/${id}`);
     }
 
     localStorage.clear();

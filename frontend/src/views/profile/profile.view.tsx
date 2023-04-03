@@ -1,11 +1,11 @@
 import React, { FunctionComponent } from "react";
-import s from "./main.module.scss";
+import s from "./profile.module.scss";
 import { Layout } from "@layouts/export";
 import { Component } from "@components/export";
 import { useTypedSelector } from "@hooks/redux.useTypedSelector";
 import { CoreTypes } from "@/@types/namespaces";
 
-export const Main: FunctionComponent = () => {
+export const Profile: FunctionComponent = () => {
   const payload = useTypedSelector((state) => state.CardData);
 
   return (

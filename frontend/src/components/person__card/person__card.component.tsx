@@ -22,7 +22,11 @@ export const PersonCard: FunctionComponent = () => {
         <div className={s.user__group}>
           <div className={s.user__meta__info}>
             <div className={s.avatar__wrapper}>
-              {data?.avatar ? <img className={s.avatar} src={data.avatar} /> : <div className={s.avatar}>{data?.username![0]}</div>}
+              {data?.avatar ? (
+                <img className={s.avatar} src={data.avatar} />
+              ) : (
+                <div className={s.avatar}>{data?.username![0]}</div>
+              )}
               <div className={s.verify}>
                 <Icons.Verify />
               </div>
@@ -49,9 +53,7 @@ export const PersonCard: FunctionComponent = () => {
             </li>
           </ul>
           <p className={s.user__description}>
-            {/* Когда мне придет время быть счастливым, я отправлюсь в могилу и
-            исполню свой долг. */}
-            {data?.description}
+            {data?.description || "Description not specified"}
           </p>
         </div>
       </div>

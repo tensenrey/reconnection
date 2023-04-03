@@ -11,7 +11,7 @@ export const GuardedRoute: FunctionComponent<any> = ({
     access: false,
   });
 
-  const handler = async () => {
+  const sessionHandler = async () => {
     const session = await fetch("/api/auth/session", {
       method: "POST",
       headers: {
@@ -30,7 +30,7 @@ export const GuardedRoute: FunctionComponent<any> = ({
   };
 
   useLayoutEffect(() => {
-    handler();
+    sessionHandler();
   }, [location]);
 
   return state.isLoading ? (

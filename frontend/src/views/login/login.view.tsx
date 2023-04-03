@@ -9,7 +9,7 @@ export const Login: FunctionComponent = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handler = async () => {
+  const sessionHandler = async () => {
     const session = await fetch("/api/auth/session", {
       method: "POST",
       headers: {
@@ -27,7 +27,7 @@ export const Login: FunctionComponent = () => {
 
   useLayoutEffect(() => {
     if (localStorage.getItem("secret") !== null) {
-      handler();
+      sessionHandler();
     }
   }, [location]);
 

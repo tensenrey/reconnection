@@ -9,6 +9,13 @@
   font-weight: normal;
   color: $main_gray_2280_color;
   border-bottom: 2px solid $main_gray_2220_color;
+  background-color: #fff;
+}
+
+.input:disabled {
+  cursor: default;
+  color: $main_gray_2220_color;
+  border-bottom: 2px solid $main_gray_2220_color;
 }
 
 .input::placeholder {

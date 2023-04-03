@@ -8,9 +8,11 @@ import s from "./input.module.scss";
 interface IInputPayload extends InputHTMLAttributes<HTMLInputElement> {
   callback: Function;
   icon: JSX.Element;
+  isLoading: boolean;
 }
 
 export const Input: FunctionComponent<IInputPayload> = ({
+  isLoading,
   icon,
   callback,
   type,
@@ -20,6 +22,7 @@ export const Input: FunctionComponent<IInputPayload> = ({
   return (
     <div className={s.input__icon__group}>
       <input
+        disabled={isLoading}
         className={s.input}
         type={type}
         autoComplete={autoComplete}

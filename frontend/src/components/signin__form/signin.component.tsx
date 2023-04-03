@@ -35,6 +35,7 @@ export const SignInForm: FunctionComponent<ISignInFormPayload> = ({
     <form className={s.form} onSubmit={handleSubmit} method="POST">
       <p className={s.navbar__logo}>reconnection</p>
       <UI.Input
+        isLoading={isLoading}
         autoComplete="email"
         placeholder="e-mail"
         icon={<Icons.Email className={s.input__icon} />}
@@ -42,6 +43,7 @@ export const SignInForm: FunctionComponent<ISignInFormPayload> = ({
         type="email"
       />
       <UI.Input
+        isLoading={isLoading}
         autoComplete="current-password"
         placeholder="password"
         icon={<Icons.Password className={s.input__icon} />}

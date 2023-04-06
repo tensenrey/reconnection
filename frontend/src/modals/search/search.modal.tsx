@@ -29,28 +29,19 @@ export const Search: FunctionComponent = () => {
               <section className={s.searched__container}>
                 <div className={s.searched__actions__container}>
                   <ul className={s.searched__actions}>
-                    <li className={s.searched__action}>Пользователи</li>
-                    <li className={s.searched__action}>Эфиры</li>
-                    <li className={s.searched__action}>Посты</li>
+                    <li className={s.searched__action}>All</li>
+                    <li className={s.searched__action}>Users</li>
+                    <li className={s.searched__action}>Broadcasts</li>
+                    <li className={s.searched__action}>Posts</li>
                   </ul>
                 </div>
-                <div>
+                <div className={s.search__result}>
+                  <h2>Users</h2>
                   <ul className={s.search__cards__list}>
-                    <li>
-                      <Component.SearchCard />
-                    </li>
-                    <li>
-                      <Component.SearchCard />
-                    </li>
-                    <li>
-                      <Component.SearchCard />
-                    </li>
-                    <li>
-                      <Component.SearchCard />
-                    </li>
-                    <li>
-                      <Component.SearchCard />
-                    </li>
+                    <Component.SearchCard />
+                    <Component.SearchCard />
+                    <Component.SearchCard />
+                    <Component.SearchCard />
                   </ul>
                 </div>
               </section>

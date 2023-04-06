@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState, FunctionComponent } from "react";
+import React, { useEffect, useState, FunctionComponent } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { Redirect } from "@/views/redirect/redirect.view";
 
@@ -25,11 +25,11 @@ export const GuardedRoute: FunctionComponent<any> = ({
       return setState({ isLoading: false, access });
     }
 
-    setState({ isLoading: false, access: false });
     localStorage.clear();
+    return setState({ isLoading: false, access: false });
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     sessionHandler();
   }, [location]);
 
@@ -38,6 +38,6 @@ export const GuardedRoute: FunctionComponent<any> = ({
   ) : state.access ? (
     <Component />
   ) : (
-    <Navigate to="/login" />
+    <Navigate to="/auth" />
   );
 };

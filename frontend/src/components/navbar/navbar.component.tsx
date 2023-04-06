@@ -31,7 +31,7 @@ export const Navbar: FunctionComponent = () => {
           </a>
         </div>
         <div className={s.user__content}>
-          <Link to={`/@${payload?.user.username}`} className={s.username}>
+          <Link to={`/${payload?.user.id}`} className={s.username}>
             {payload?.user.username}
           </Link>
           {payload.user?.avatar !== null && <img className={s.avatar} src={payload.user.avatar} />}

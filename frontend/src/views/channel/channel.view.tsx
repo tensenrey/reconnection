@@ -6,21 +6,21 @@ import { Icons } from "@assets/components/export";
 import { Link } from "react-router-dom";
 
 export const Channel: FunctionComponent = () => {
-  const payload = useTypedSelector((state) => state.Channel);
+  const payload = useTypedSelector((state) => ({channel: state.Channel, user: state.User}));
 
   return (
     <section className={s.channel__backdrop}>
       <Layout.Responsive>
         <>
           <div className={s.channel__actions}>
-            <Link to={"/@centenario"} className={s.channel__action__button}>
+            <Link to={`/${payload.user.user.id}`} className={s.channel__action__button}>
               <Icons.BackArrow />
             </Link>
             <h2 className={s.channel__title}>Broadcast title</h2>
           </div>
           <section className={s.channel__wrapper}>
             <section className={s.channel__list}>
-              {payload.sockets.map((el: any) => {
+              {payload.channel.sockets.map((el: any) => {
                 return (
                   <div className={s.channel__stream} key={el.socket}>
                     <div className={s.channel__stream__avatar}></div>

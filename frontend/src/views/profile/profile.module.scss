@@ -1,3 +1,5 @@
+@import "@ui/variables.module.scss";
+
 .main {
   width: 100%;
   height: auto;
@@ -14,4 +16,9 @@
   justify-content: space-around;
   row-gap: 40px;
   margin-bottom: 40px;
+}
+
+.card__content__notfound {
+  font-weight: bold;
+  color: $main_black_2190_color;
 }

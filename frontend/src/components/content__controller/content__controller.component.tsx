@@ -9,7 +9,6 @@ export const ContentController: FunctionComponent = () => {
   const {
     ContentControllerChangeLayout,
     ContentControllerChangeTransform,
-    CardDataChangePayload,
   } = useActions();
 
   return (

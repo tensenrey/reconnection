@@ -18,9 +18,15 @@ const ProfileContent: FunctionComponent<IPersonCard> = ({ data }) => {
         <Component.PersonCard data={data} />
         <Component.ContentController />
         <section className={s.card__container}>
-          {payload.data.map((el: CoreTypes.Card.ICardData, index: number) => (
-            <Component.ContentCard key={index} card={el} />
-          ))}
+          {payload.data.length > 0 ? (
+            payload.data.map((el: CoreTypes.Card.ICardData, index: number) => (
+              <Component.ContentCard key={index} card={el} />
+            ))
+          ) : (
+            <p className={s.card__content__notfound}>
+              User hasn't uploaded anything yet
+            </p>
+          )}
         </section>
       </section>
     </Layout.ResponsiveNavbar>
@@ -28,5 +34,5 @@ const ProfileContent: FunctionComponent<IPersonCard> = ({ data }) => {
 };
 
 export const Profile: FunctionComponent = () => {
-  return <Private.ProfileInterception component={ProfileContent} />
-}
+  return <Private.ProfileInterception component={ProfileContent} />;
+};

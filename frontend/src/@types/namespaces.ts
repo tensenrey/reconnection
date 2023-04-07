@@ -8,7 +8,7 @@ export namespace CoreTypes {
       description: string | null;
     }
     export interface UserDTO {
-      user: IUserSource
+      user: IUserSource;
     }
   }
 

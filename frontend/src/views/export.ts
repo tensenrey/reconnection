@@ -3,7 +3,7 @@ import { Login } from "./login/login.view";
 import { Profile } from "./profile/profile.view";
 import { Channel } from "./channel/channel.view";
 import { News } from "./news/news.view";
-import { NotFound } from './notfound/notfound.view';
+import { NotFound } from "./notfound/notfound.view";
 
 export const View = {
   Channel,
@@ -11,5 +11,5 @@ export const View = {
   Login,
   Redirect,
   News,
-  NotFound
+  NotFound,
 };

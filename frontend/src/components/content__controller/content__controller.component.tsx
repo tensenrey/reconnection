@@ -6,10 +6,8 @@ import { Icons } from "@assets/components/export";
 
 export const ContentController: FunctionComponent = () => {
   const payload = useTypedSelector((state) => state.ContentController);
-  const {
-    ContentControllerChangeLayout,
-    ContentControllerChangeTransform,
-  } = useActions();
+  const { ContentControllerChangeLayout, ContentControllerChangeTransform } =
+    useActions();
 
   return (
     <section className={s.content__control__container}>

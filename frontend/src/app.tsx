@@ -26,10 +26,7 @@ const AppRouting: FunctionComponent = () => (
       path="*"
       element={<View.Redirect children={<Navigate replace to="auth" />} />}
     />
-    <Route
-      path="notfound"
-      element={<View.NotFound />}
-    />
+    <Route path="notfound" element={<Private.GuardedInterception component={View.NotFound} />} />
   </Routes>
 );
 

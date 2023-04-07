@@ -46,8 +46,12 @@ export const Navbar: FunctionComponent = () => {
           <Link to={`/${payload?.user.id}`} className={s.username}>
             {payload?.user.username}
           </Link>
-          {payload.user?.avatar !== null && <img className={s.avatar} src={payload.user.avatar} />}
-          {payload.user?.username && <div className={s.avatar}>{payload.user?.username![0]}</div>}
+          {payload.user?.avatar !== null && (
+            <img className={s.avatar} src={payload.user.avatar} />
+          )}
+          {payload.user?.username && (
+            <div className={s.avatar}>{payload.user?.username![0]}</div>
+          )}
         </div>
       </header>
     </>

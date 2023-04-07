@@ -21,10 +21,14 @@ export const store = configureStore({
     SearchModal: SearchModalReducer,
     Channel: ChannelControllerReducer,
     [AuthApi.reducerPath]: AuthApi.reducer,
-    [UserApi.reducerPath]: UserApi.reducer
+    [UserApi.reducerPath]: UserApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(AuthApi.middleware, UserApi.middleware, thunk),
+    getDefaultMiddleware().concat(
+      AuthApi.middleware,
+      UserApi.middleware,
+      thunk
+    ),
 });
 
 export type TypedRootState = ReturnType<typeof store.getState>;

@@ -19,7 +19,10 @@ export const PostApi = createApi({
         method: "GET",
       }),
     }),
-    postCard: build.query<CoreTypes.Card.ICardData, Pick<CoreTypes.Card.ICardData, "id">>({
+    postCard: build.query<
+      CoreTypes.Card.ICardData,
+      Pick<CoreTypes.Card.ICardData, "id">
+    >({
       query: (payload) => ({
         url: `/post`,
         method: "POST",
@@ -29,7 +32,10 @@ export const PostApi = createApi({
         body: JSON.stringify({ payload }),
       }),
     }),
-    putCardById: build.query<CoreTypes.Card.ICardData, CoreTypes.Card.ICardData>({
+    putCardById: build.query<
+      CoreTypes.Card.ICardData,
+      CoreTypes.Card.ICardData
+    >({
       query: (payload) => ({
         url: `/post/${payload.id}`,
         method: "PUT",

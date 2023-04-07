@@ -3,5 +3,5 @@ import { ProfileInterception } from "./profile.interception";
 
 export const Private = {
   GuardedInterception,
-  ProfileInterception
+  ProfileInterception,
 };

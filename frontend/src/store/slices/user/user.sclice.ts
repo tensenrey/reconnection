@@ -7,8 +7,8 @@ const initialState: CoreTypes.User.UserDTO = {
     username: null,
     email: null,
     avatar: null,
-    description: null
-  }
+    description: null,
+  },
 };
 
 export const UserSlice = createSlice({
@@ -17,7 +17,7 @@ export const UserSlice = createSlice({
   reducers: {
     UserSetPayload: (state, action) => {
       state.user = action.payload;
-    }
+    },
   },
 });
 

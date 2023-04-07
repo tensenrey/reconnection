@@ -5,26 +5,30 @@ import { Routes, Route, HashRouter, Navigate } from "react-router-dom";
 import { View } from "@views/export";
 import { Provider } from "react-redux";
 import { store } from "@store/store";
-import { Private } from "./private/export";
+import { Private } from "./interceptions/export";
 
 const AppRouting: FunctionComponent = () => (
   <Routes>
     <Route path="/auth" element={<View.Login />} />
     <Route
       path="/:id"
-      element={<Private.GuardedRoute component={View.Profile} />}
+      element={<Private.GuardedInterception component={View.Profile} />}
     />
     <Route
       path="/channel/:channelID"
-      element={<Private.GuardedRoute component={View.Channel} />}
+      element={<Private.GuardedInterception component={View.Channel} />}
     />
     <Route
       path="/news"
-      element={<Private.GuardedRoute component={View.News} />}
+      element={<Private.GuardedInterception component={View.News} />}
     />
     <Route
       path="*"
       element={<View.Redirect children={<Navigate replace to="auth" />} />}
+    />
+    <Route
+      path="notfound"
+      element={<View.NotFound />}
     />
   </Routes>
 );

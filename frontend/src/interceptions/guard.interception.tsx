@@ -1,8 +1,8 @@
 import React, { useEffect, useState, FunctionComponent } from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import { Redirect } from "@/views/redirect/redirect.view";
+import { View } from "@/views/export";
 
-export const GuardedRoute: FunctionComponent<any> = ({
+export const GuardedInterception: FunctionComponent<any> = ({
   component: Component,
 }) => {
   const location = useLocation();
@@ -34,7 +34,7 @@ export const GuardedRoute: FunctionComponent<any> = ({
   }, [location]);
 
   return state.isLoading ? (
-    <Redirect />
+    <View.Redirect />
   ) : state.access ? (
     <Component />
   ) : (

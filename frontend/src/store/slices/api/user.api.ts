@@ -7,7 +7,7 @@ export const UserApi = createApi({
     baseUrl: "/api",
   }),
   endpoints: (build) => ({
-    user: build.query<CoreTypes.User.IUserSource, Pick<CoreTypes.User.IUserSource, 'id'>>(
+    user: build.query<CoreTypes.User.IUserSource, string>(
       {
         query: (payload) => ({
           url: `/user/${payload}`,

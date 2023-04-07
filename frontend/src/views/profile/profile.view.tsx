@@ -4,14 +4,18 @@ import { Layout } from "@layouts/export";
 import { Component } from "@components/export";
 import { useTypedSelector } from "@hooks/redux.useTypedSelector";
 import { CoreTypes } from "@/@types/namespaces";
+import { Private } from "@/interceptions/export";
 
-export const Profile: FunctionComponent = () => {
+interface IPersonCard {
+  data: CoreTypes.User.IUserSource;
+}
+
+const ProfileContent: FunctionComponent<IPersonCard> = ({ data }) => {
   const payload = useTypedSelector((state) => state.CardData);
-
   return (
     <Layout.ResponsiveNavbar>
       <section className={s.main}>
-        <Component.PersonCard />
+        <Component.PersonCard data={data} />
         <Component.ContentController />
         <section className={s.card__container}>
           {payload.data.map((el: CoreTypes.Card.ICardData, index: number) => (
@@ -22,3 +26,7 @@ export const Profile: FunctionComponent = () => {
     </Layout.ResponsiveNavbar>
   );
 };
+
+export const Profile: FunctionComponent = () => {
+  return <Private.ProfileInterception component={ProfileContent} />
+}

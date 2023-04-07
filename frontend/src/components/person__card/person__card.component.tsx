@@ -40,15 +40,15 @@ export const PersonCard: FunctionComponent = () => {
           </div>
           <ul className={s.attach}>
             <li className={s.attach__item}>
-              {Utils.numberParser(100000000)}
+              {Utils.numberParser(0)}
               <Icons.Followers />
             </li>
             <li className={s.attach__item}>
-              {Utils.numberParser(1000)}
+              {Utils.numberParser(0)}
               <Icons.Reactions />
             </li>
             <li className={s.attach__item}>
-              {Utils.numberParser(45000)}
+              {Utils.numberParser(0)}
               <Icons.Rating />
             </li>
           </ul>

@@ -62,7 +62,7 @@
 }
 
 .searched__action {
-  font-weight: bold;
+  font-weight: normal;
   list-style-type: none;
   font-size: 16px;
   width: fit-content;
@@ -72,7 +72,7 @@
   color: $main_black_95_color;
   cursor: pointer;
   &:hover {
-    background-color: $main_blue_color;
+    background-color: $main_black_color;
     color: $main_white_color;
   }
 }

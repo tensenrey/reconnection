@@ -29,7 +29,6 @@ export const Search: FunctionComponent = () => {
               <section className={s.searched__container}>
                 <div className={s.searched__actions__container}>
                   <ul className={s.searched__actions}>
-                    <li className={s.searched__action}>All</li>
                     <li className={s.searched__action}>Users</li>
                     <li className={s.searched__action}>Broadcasts</li>
                     <li className={s.searched__action}>Posts</li>

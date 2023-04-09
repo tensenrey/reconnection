@@ -1,7 +1,7 @@
-import { GuardedInterception } from "./guard.interception";
-import { ProfileInterception } from "./profile.interception";
+import { Guard } from "./guard.interception";
+import { Profile } from "./profile.interception";
 
-export const Private = {
-  GuardedInterception,
-  ProfileInterception,
+export const Interception = {
+  Guard,
+  Profile,
 };

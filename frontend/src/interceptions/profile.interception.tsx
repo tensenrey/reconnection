@@ -3,7 +3,7 @@ import { useParams, Navigate } from "react-router-dom";
 import { useUserQuery } from "@/store/slices/api/user.api";
 import { View } from "@views/export";
 
-export const ProfileInterception: FunctionComponent<any> = ({
+export const Profile: FunctionComponent<any> = ({
   component: Component,
 }) => {
   const { id } = useParams();

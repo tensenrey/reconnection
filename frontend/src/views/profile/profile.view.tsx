@@ -4,7 +4,7 @@ import { Layout } from "@layouts/export";
 import { Component } from "@components/export";
 import { useTypedSelector } from "@hooks/redux.useTypedSelector";
 import { CoreTypes } from "@/@types/namespaces";
-import { Private } from "@/interceptions/export";
+import { Interception } from "@/interceptions/export";
 
 interface IPersonCard {
   data: CoreTypes.User.IUserSource;
@@ -34,5 +34,5 @@ const ProfileContent: FunctionComponent<IPersonCard> = ({ data }) => {
 };
 
 export const Profile: FunctionComponent = () => {
-  return <Private.ProfileInterception component={ProfileContent} />;
+  return <Interception.Profile component={ProfileContent} />;
 };

@@ -1,0 +1,41 @@
+@import "@ui/variables.module.scss";
+
+.notfound__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(100vh - 94px);
+  flex-direction: column;
+  gap: 25px;
+}
+
+.notfound__title {
+  font-size: 38px;
+  color: $main_black_color;
+}
+
+.notfound__link {
+  transition-duration: .0s;
+  font-size: 16px;
+  width: auto;
+  background-color: $main_white_color;
+  border: 1px solid $main_black_color;
+  padding: 15px;
+  border-radius: 50px;
+}
+
+.notfound__link:hover .notfound__link__arrow {
+  margin-left: 10px;
+}
+
+.notfound__link__arrow {
+  color: $main_black_color;
+  transition-duration: .2s;
+  margin-left: 5px;
+  font-size: 16px;
+}
+
+.notfound__link__text {
+  color: $main_black_color;
+}

@@ -4,7 +4,7 @@ import s from "./button.module.scss";
 
 interface IButtonPayload {
   text: string;
-  isLoading: boolean;
+  isLoading?: boolean;
 }
 
 export const Button: FunctionComponent<IButtonPayload> = ({

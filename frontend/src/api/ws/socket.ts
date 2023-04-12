@@ -1,10 +1,18 @@
-import { io, Socket } from "socket.io-client";
+import { io, Socket, ManagerOptions, SocketOptions } from "socket.io-client";
 
-export const socket: Socket = io(
-  process.env.NODE_ENV === "production" ? "/" : "http://localhost:81/",
-  {
+export class SocketCreator {
+  private readonly SocketOptions: Partial<ManagerOptions & SocketOptions> = {
     forceNew: true,
     timeout: 1000,
     transports: ["websocket"],
+    autoConnect: true,
   }
-);
+
+  connect() {
+    return io("/", this.SocketOptions);
+  }
+
+  connectByNSP(nsp: string): Socket {
+    return io("/" + nsp, this.SocketOptions);
+  }
+}

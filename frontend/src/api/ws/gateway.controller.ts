@@ -5,5 +5,6 @@ export class GatewayController {
 
   constructor(socket: Socket) {
     this.socket = socket;
+    console.log(socket);
   }
 }

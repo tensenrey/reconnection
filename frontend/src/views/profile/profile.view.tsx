@@ -5,6 +5,8 @@ import { Component } from "@components/export";
 import { useTypedSelector } from "@hooks/redux.useTypedSelector";
 import { CoreTypes } from "@/@types/namespaces";
 import { Interception } from "@/interceptions/export";
+import { api } from "@/api/export";
+import { Socket } from "socket.io-client";
 
 interface IPersonCard {
   data: CoreTypes.User.IUserSource;
@@ -12,6 +14,9 @@ interface IPersonCard {
 
 const ProfileContent: FunctionComponent<IPersonCard> = ({ data }) => {
   const payload = useTypedSelector((state) => state.CardData);
+  
+  api.gateway.SocketCreator.connectByNSP("channel").on("connected", (socket: Socket) => {});
+  
   return (
     <Layout.ResponsiveNavbar>
       <section className={s.main}>

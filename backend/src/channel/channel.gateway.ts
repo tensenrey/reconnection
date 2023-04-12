@@ -1,11 +1,13 @@
-import { SubscribeMessage, WebSocketGateway } from '@nestjs/websockets';
-import { Socket } from 'socket.io';
+import { SubscribeMessage, WebSocketGateway, WebSocketServer } from '@nestjs/websockets';
+import { Socket, Server } from 'socket.io';
 
-@WebSocketGateway(81, { transports: ['websocket'], namespace: '/channel' })
+@WebSocketGateway({ transports: ['websocket'], namespace: '/channel' })
 export class ChannelGateway {
-  @SubscribeMessage('join')
-  handleConnect(client: Socket, roomID: string) {
-    console.log(`Socket connected: ${client.id} room: ${roomID}`);
+  @WebSocketServer()
+  server: Server;
+
+  handleConnection(client: Socket) {
+    client.emit('connection', 'Successfully connected to server');
   }
 
   @SubscribeMessage('leave')

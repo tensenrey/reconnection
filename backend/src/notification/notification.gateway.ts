@@ -1,7 +1,7 @@
 import { SubscribeMessage, WebSocketGateway } from '@nestjs/websockets';
 import { Socket } from 'socket.io';
 
-@WebSocketGateway(81, { transports: ['websocket'], namespace: '/notification' })
+@WebSocketGateway({ transports: ['websocket'], namespace: '/notification' })
 export class NotificationsGateway {
   @SubscribeMessage('new')
   handleNewNotification(socket: Socket, notification: string) {

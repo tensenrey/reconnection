@@ -6,13 +6,16 @@ export class SocketCreator {
     timeout: 1000,
     transports: ["websocket"],
     autoConnect: true,
+  };
+
+  connect(options: Partial<ManagerOptions & SocketOptions> = {}) {
+    return io("/", { ...this.SocketOptions, ...options });
   }
 
-  connect() {
-    return io("/", this.SocketOptions);
-  }
-
-  connectByNSP(nsp: string): Socket {
-    return io("/" + nsp, this.SocketOptions);
+  connectByNSP(
+    nsp: string,
+    options: Partial<ManagerOptions & SocketOptions> = {}
+  ): Socket {
+    return io("/" + nsp, { ...this.SocketOptions, ...options });
   }
 }

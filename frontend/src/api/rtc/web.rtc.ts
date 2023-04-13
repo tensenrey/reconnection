@@ -44,4 +44,4 @@ class RTCController implements CoreTypes.RTC.IRTCController {
   }
 }
 
-export const RealTimeConnectionController = new RTCController(freeice());
+export const WebRTC = new RTCController(freeice());

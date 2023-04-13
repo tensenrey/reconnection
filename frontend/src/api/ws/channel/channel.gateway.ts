@@ -1,10 +1,9 @@
 import { Socket } from "socket.io-client";
 
-export class GatewayController {
+export class ChannelGateway {
   private readonly socket: Socket;
 
   constructor(socket: Socket) {
     this.socket = socket;
-    console.log(socket);
   }
 }

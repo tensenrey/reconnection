@@ -1,5 +1,5 @@
-import { Guard } from "./guard.interception";
-import { Profile } from "./profile.interception";
+import { Guard } from "./guard/guard.interception";
+import { Profile } from "./profile/profile.interception";
 
 export const Interception = {
   Guard,

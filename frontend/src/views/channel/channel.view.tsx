@@ -26,7 +26,7 @@ export const Channel: FunctionComponent = () => {
           </div>
           <section className={s.channel__wrapper}>
             <section className={s.channel__list}>
-              {payload.channel.sockets.map((el: any) => {
+              {payload.channel.sockets.map((el: { socket: string }) => {
                 return (
                   <div className={s.channel__stream} key={el.socket}>
                     <div className={s.channel__stream__avatar}></div>

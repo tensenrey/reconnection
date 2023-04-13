@@ -2,7 +2,11 @@ import React, { useEffect, useState, FunctionComponent } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { View } from "@/views/export";
 
-export const Guard: FunctionComponent<any> = ({
+interface IGuard {
+  component: FunctionComponent
+}
+
+export const Guard: FunctionComponent<IGuard> = ({
   component: Component,
 }) => {
   const location = useLocation();

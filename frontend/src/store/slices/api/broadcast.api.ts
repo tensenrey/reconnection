@@ -7,7 +7,7 @@ export const BroadcastApi = createApi({
     baseUrl: "/api",
   }),
   endpoints: (build) => ({
-    getAllCard: build.query<any, CoreTypes.Card.ICardData[]>({
+    getAllCard: build.query<null, CoreTypes.Card.ICardData[]>({
       query: () => ({
         url: "/broadcast",
         method: "GET",
@@ -45,15 +45,15 @@ export const BroadcastApi = createApi({
         body: JSON.stringify({ payload }),
       }),
     }),
-    deleteCardById: build.query<CoreTypes.Card.ICardData, any>({
-      query: (payload) => ({
-        url: `/broadcast/${payload.id}`,
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }),
-    }),
+    // deleteCardById: build.query<CoreTypes.Card.ICardData, null>({
+    //   query: (payload) => ({
+    //     url: `/broadcast/${payload.id}`,
+    //     method: "DELETE",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //   }),
+    // }),
   }),
 });
 

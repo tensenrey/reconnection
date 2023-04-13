@@ -7,13 +7,13 @@ export const PostApi = createApi({
     baseUrl: "/api",
   }),
   endpoints: (build) => ({
-    getAllCard: build.query<any, CoreTypes.Card.ICardData[]>({
+    getAllCard: build.query<CoreTypes.Card.ICardData[], null>({
       query: () => ({
         url: "/post",
         method: "GET",
       }),
     }),
-    getCardById: build.query<string, CoreTypes.Card.ICardData>({
+    getCardById: build.query<CoreTypes.Card.ICardData, string>({
       query: (id) => ({
         url: `/post/${id}`,
         method: "GET",
@@ -45,15 +45,15 @@ export const PostApi = createApi({
         body: JSON.stringify({ payload }),
       }),
     }),
-    deleteCardById: build.query<CoreTypes.Card.ICardData, any>({
-      query: (payload) => ({
-        url: `/post/${payload.id}`,
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }),
-    }),
+    // deleteCardById: build.query<CoreTypes.Card.ICardData, null>({
+    //   query: (payload) => ({
+    //     url: `/post/${payload.id}`,
+    //     method: "DELETE",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //   }),
+    // }),
   }),
 });
 

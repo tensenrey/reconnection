@@ -2,8 +2,19 @@ import React, { FunctionComponent } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import { useUserQuery } from "@/store/slices/api/user.api";
 import { View } from "@views/export";
+import { CoreTypes } from "@/@types/namespaces";
 
-export const Profile: FunctionComponent<any> = ({
+
+interface IPersonCard {
+  data: CoreTypes.User.IUserSource;
+}
+
+interface IProfile {
+  component: FunctionComponent<IPersonCard>
+}
+
+
+export const Profile: FunctionComponent<IProfile> = ({
   component: Component,
 }) => {
   const { id } = useParams();
@@ -12,7 +23,7 @@ export const Profile: FunctionComponent<any> = ({
   return isLoading ? (
     <View.Redirect />
   ) : !isError ? (
-    <Component data={data} />
+    <Component data={data!} />
   ) : (
     <Navigate to="/notfound" />
   );

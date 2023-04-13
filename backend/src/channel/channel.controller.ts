@@ -31,12 +31,12 @@ export class ChannelController {
   }
 
   @Delete(':id')
-  async delete() {
+  async delete(): Promise<null> {
     return null;
   }
 
   @Post(':id')
-  async leave() {
+  async leave(): Promise<null> {
     return null;
   }
 }

@@ -11,7 +11,7 @@ export const ContentCard: FunctionComponent<CoreTypes.Card.IContentCard> = ({
     <div className={s.card__poster}></div>
     <b className={s.card__title}>{card.title}</b>
     <span className={s.card__meta}>
-      <p className={s.card__author}>{card.author}</p>
+      <p className={s.card__author}>@{card.author}</p>
       <span className={s.card__views}>
         {Utils.numberParser(card.views)}
         <Icons.Views />

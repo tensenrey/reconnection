@@ -8,6 +8,7 @@
   height: 250px;
   cursor: pointer;
   &:hover > .card__poster {
+    border-radius: 10px;
     background-color: $main_gray_2280_color;
   }
 }

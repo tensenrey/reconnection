@@ -26,32 +26,38 @@ export const Navbar: FunctionComponent = () => {
         <div className={s.call__line} />
       </Link>
       <header className={s.navbar}>
-        <div className={s.navbar__menu}>
-          <Link
-            to={"/news"}
-            className={`${s.navbar__menu__item} ${s.navbar__logo}`}
-          >
-            reconnection
-          </Link>
-        </div>
-        <div className={s.navigation}>
-          <a
-            className={`${s.navbar__menu__item} ${s.navbar__menu__input}`}
-            onClick={() => SearchModalChangeShow(true)}
-          >
-            Search
-          </a>
-        </div>
-        <div className={s.user__content}>
-          <Link to={`/${payload?.user.id}`} className={s.username}>
-            {payload?.user.username}
-          </Link>
-          {payload.user?.avatar !== null && (
-            <img className={s.avatar} src={payload.user.avatar} />
-          )}
-          {payload.user?.username && (
-            <div className={s.avatar}>{payload.user?.username![0]}</div>
-          )}
+        <div className={s.navbar__wrapper}>
+          <div className={s.navbar__menu}>
+            <Link
+              to={"/news"}
+              className={`${s.navbar__menu__item} ${s.navbar__logo}`}
+            >
+              reconnection
+            </Link>
+          </div>
+          <div className={s.navigation}>
+            <a
+              className={`${s.navbar__menu__item} ${s.navbar__menu__input}`}
+              onClick={() => SearchModalChangeShow(true)}
+            >
+              Search
+            </a>
+          </div>
+          <div className={s.user__content}>
+            <div></div>
+            <div></div>
+            <div></div>
+            <span>
+              <Link to={`/${payload?.user.id}`} className={s.username}>
+                {payload.user?.avatar !== null && (
+                  <img className={s.avatar} src={payload.user.avatar} />
+                )}
+                {payload.user?.username && (
+                  <div className={s.avatar}>{payload.user?.username![0]}</div>
+                )}
+              </Link>
+            </span>
+          </div>
         </div>
       </header>
     </>

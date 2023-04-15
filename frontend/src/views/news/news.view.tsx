@@ -52,7 +52,7 @@ export const News: FunctionComponent = () => {
   ];
   return (
     <Layout.ResponsiveNavbar>
-      <section>
+      <section className={s.card__wrapper}>
         <h3>News</h3>
         <section className={s.card__container}>
           {cards.map((el) => (

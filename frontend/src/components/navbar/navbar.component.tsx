@@ -5,6 +5,7 @@ import { useActions } from "@hooks/redux.useActions";
 import { useTypedSelector } from "@/hooks/redux.useTypedSelector";
 import { Utils } from "@/utils/export";
 import { useUserQuery } from "@/store/slices/api/user.api";
+import { Icons } from "@/assets/components/export";
 
 export const Navbar: FunctionComponent = () => {
   const payload = useTypedSelector((state) => state.User);
@@ -22,9 +23,9 @@ export const Navbar: FunctionComponent = () => {
 
   return (
     <>
-      <Link to="/channel/a1">
+      {/* <Link to="/channel/a1">
         <div className={s.call__line} />
-      </Link>
+      </Link> */}
       <header className={s.navbar}>
         <div className={s.navbar__wrapper}>
           <div className={s.navbar__menu}>
@@ -44,10 +45,10 @@ export const Navbar: FunctionComponent = () => {
             </a>
           </div>
           <div className={s.user__content}>
-            <div></div>
-            <div></div>
-            <div></div>
-            <span>
+            <div className={s.user__content__action}><Icons.Meet /></div>
+            <div className={s.user__content__action}><Icons.Settings /></div>
+            <div className={s.user__content__action}><Icons.Natification /></div>
+            <div className={s.user__content__link}>
               <Link to={`/${payload?.user.id}`} className={s.username}>
                 {payload.user?.avatar !== null && (
                   <img className={s.avatar} src={payload.user.avatar} />
@@ -56,7 +57,7 @@ export const Navbar: FunctionComponent = () => {
                   <div className={s.avatar}>{payload.user?.username![0]}</div>
                 )}
               </Link>
-            </span>
+            </div>
           </div>
         </div>
       </header>

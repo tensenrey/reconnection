@@ -12,6 +12,8 @@ import { BackArrow } from "./back-arrow/back-arrow.icon";
 import { Email } from "./email/email.icon";
 import { Password } from "./password/password.icon";
 import { Loading } from "./loading/loading.icon";
+import { Natification } from './natification/natification.icon';
+import { Meet } from "./meet/meet.icon";
 
 export const Icons = {
   Broadcast,
@@ -28,4 +30,6 @@ export const Icons = {
   Email,
   Password,
   Loading,
+  Natification,
+  Meet
 };

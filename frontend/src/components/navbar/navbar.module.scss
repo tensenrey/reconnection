@@ -19,16 +19,6 @@
   cursor: pointer;
 }
 
-.username {
-  cursor: pointer;
-  text-decoration: none;
-  color: $main_gray_2b_color;
-  line-height: 24px;
-  &:visited {
-    color: $main_black_color;
-  }
-}
-
 .user__content {
   display: flex;
   gap: 15px;
@@ -36,10 +26,8 @@
   align-items: center;
   position: absolute;
   right: 0;
-  &:hover > .username {
-    font-weight: bold;
-  }
   border-radius: 10px;
+  background-color: $main_white_color;
 }
 
 .avatar {
@@ -102,7 +90,7 @@
 
 .navbar__menu__input {
   width: 100%;
-  height: 32px;
+  height: 40px;
   padding: 10px;
   background-color: #ffffff;  
   color: $main_gray_2280_color;
@@ -112,17 +100,30 @@
   justify-content: flex-start;
 }
 
-.user__content > div {
-  width: 32px;
-  height: 32px;
-  background-color: $main_gray_2208_color;
+.user__content__action {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
   border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  &>img {
+    opacity: .4;
+  }
+  &:hover > img {
+    filter: invert(1);
+    opacity: 1;
+  } 
+  &:hover {
+    background-color: $main_black_color;
+  }
 }
 
-.user__content> span {
+.user__content__link {
   width: 48px;
   height: 48px;
-  background-color: $main_white_color;
   display: flex;
   align-items: center;
   justify-content: center;

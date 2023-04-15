@@ -23,9 +23,6 @@ export const Navbar: FunctionComponent = () => {
 
   return (
     <>
-      {/* <Link to="/channel/a1">
-        <div className={s.call__line} />
-      </Link> */}
       <header className={s.navbar}>
         <div className={s.navbar__wrapper}>
           <div className={s.navbar__menu}>

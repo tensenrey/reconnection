@@ -1,0 +1,12 @@
+@import "@ui/variables.module.scss";
+
+.call__line {
+  position: sticky;
+  top: 0;
+  height: 14px;
+  background: $main_call_line_default_color;
+  background: $main_gradient_call_line_color;
+  width: 100%;
+  z-index: 3;
+  cursor: pointer;
+}

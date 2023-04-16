@@ -14,8 +14,10 @@ import { Password } from "./password/password.icon";
 import { Loading } from "./loading/loading.icon";
 import { Natification } from './natification/natification.icon';
 import { Meet } from "./meet/meet.icon";
+import { Ellipsis } from "./ellipsis/ellipsis.icon";
 
 export const Icons = {
+  Ellipsis,
   Broadcast,
   Followers,
   Post,

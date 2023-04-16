@@ -10,42 +10,14 @@ export const News: FunctionComponent = () => {
     {
       title: "Awesome title",
       author: "me1",
-      views: 1,
-      id: "3123",
-      type: CoreTypes.Card.CardType.broadcast,
-    },
-    {
-      title: "Awesome title",
-      author: "me2",
-      views: 2,
-      id: "3123",
-      type: CoreTypes.Card.CardType.broadcast,
-    },
-    {
-      title: "Awesome title",
-      author: "me3",
-      views: 3,
-      id: "3123",
-      type: CoreTypes.Card.CardType.broadcast,
-    },
-    {
-      title: "Awesome title",
-      author: "me4",
-      views: 4,
+      views: 111121,
       id: "3123",
       type: CoreTypes.Card.CardType.broadcast,
     },
         {
       title: "Awesome title",
-      author: "me3",
-      views: 3,
-      id: "3123",
-      type: CoreTypes.Card.CardType.broadcast,
-    },
-    {
-      title: "Awesome title",
-      author: "me4",
-      views: 4,
+      author: "me1",
+      views: 23123123,
       id: "3123",
       type: CoreTypes.Card.CardType.broadcast,
     },
@@ -61,17 +33,6 @@ export const News: FunctionComponent = () => {
               key={el.views + el.author + Math.random()}
             />
           ))}
-        </section>
-        <section>
-          <h3>Broadcasts today</h3>
-          <section className={s.card__container}>
-            {cards.map((el) => (
-              <Component.ContentCard
-                card={el}
-                key={el.views + el.author + Math.random()}
-              />
-            ))}
-          </section>
         </section>
       </section>
     </Layout.ResponsiveNavbar>

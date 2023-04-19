@@ -21,40 +21,38 @@ export const Navbar: FunctionComponent = () => {
   }, [data]);
 
   return (
-    <>
-      <header className={s.navbar}>
-        <div className={s.navbar__wrapper}>
-          <div className={s.navbar__menu}>
-            <Link
-              to={"/news"}
-              className={`${s.navbar__menu__item} ${s.navbar__logo}`}
-            >
-              reconnection
+    <header className={s.navbar}>
+      <div className={s.navbar__wrapper}>
+        <div className={s.navbar__menu}>
+          <Link
+            to={"/news"}
+            className={`${s.navbar__menu__item} ${s.navbar__logo}`}
+          >
+            reconnection
+          </Link>
+        </div>
+        <div className={s.navigation}>
+          <input
+            className={`${s.navbar__menu__item} ${s.navbar__menu__input}`}
+            placeholder="Search"
+          />
+        </div>
+        <div className={s.user__content}>
+          <Link className={s.user__content__action} to={"/meet/1"}><Icons.Meet /></Link>
+          <div className={s.user__content__action}><Icons.Settings /></div>
+          <div className={s.user__content__action}><Icons.Natification /></div>
+          <div className={s.user__content__link}>
+            <Link to={`/${payload?.user.id}`} className={s.username}>
+              {payload.user?.avatar !== null && (
+                <img className={s.avatar} src={payload.user.avatar} />
+              )}
+              {payload.user?.username && (
+                <div className={s.avatar}>{payload.user?.username![0]}</div>
+              )}
             </Link>
           </div>
-          <div className={s.navigation}>
-            <input
-              className={`${s.navbar__menu__item} ${s.navbar__menu__input}`}
-              placeholder="Search"
-            />
-          </div>
-          <div className={s.user__content}>
-            <Link className={s.user__content__action} to={"/meet/1"}><Icons.Meet /></Link>
-            <div className={s.user__content__action}><Icons.Settings /></div>
-            <div className={s.user__content__action}><Icons.Natification /></div>
-            <div className={s.user__content__link}>
-              <Link to={`/${payload?.user.id}`} className={s.username}>
-                {payload.user?.avatar !== null && (
-                  <img className={s.avatar} src={payload.user.avatar} />
-                )}
-                {payload.user?.username && (
-                  <div className={s.avatar}>{payload.user?.username![0]}</div>
-                )}
-              </Link>
-            </div>
-          </div>
         </div>
-      </header>
-    </>
+      </div>
+    </header>
   );
 };

@@ -39,7 +39,7 @@ export const Navbar: FunctionComponent = () => {
             />
           </div>
           <div className={s.user__content}>
-            <div className={s.user__content__action}><Icons.Meet /></div>
+            <Link className={s.user__content__action} to={"/meet/1"}><Icons.Meet /></Link>
             <div className={s.user__content__action}><Icons.Settings /></div>
             <div className={s.user__content__action}><Icons.Natification /></div>
             <div className={s.user__content__link}>

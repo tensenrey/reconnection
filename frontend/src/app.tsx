@@ -15,7 +15,7 @@ const AppRouting: FunctionComponent = () => (
       element={<Interception.Guard component={View.Profile} />}
     />
     <Route
-      path="/channel/:channelID"
+      path="/meet/:meetID"
       element={<Interception.Guard component={View.Channel} />}
     />
     <Route

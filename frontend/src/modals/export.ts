@@ -1,3 +1,1 @@
-import { Search } from "./search/search.modal";
-
-export const Modals = { Search };
+export const Modals = {  };

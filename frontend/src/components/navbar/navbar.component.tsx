@@ -9,7 +9,6 @@ import { Icons } from "@/assets/components/export";
 
 export const Navbar: FunctionComponent = () => {
   const payload = useTypedSelector((state) => state.User);
-  const { SearchModalChangeShow } = useActions();
 
   const jwt = Utils.JWTDecoder(localStorage.getItem("secret")!);
   const { UserSetPayload } = useActions();
@@ -34,12 +33,10 @@ export const Navbar: FunctionComponent = () => {
             </Link>
           </div>
           <div className={s.navigation}>
-            <a
+            <input
               className={`${s.navbar__menu__item} ${s.navbar__menu__input}`}
-              onClick={() => SearchModalChangeShow(true)}
-            >
-              Search
-            </a>
+              placeholder="Search"
+            />
           </div>
           <div className={s.user__content}>
             <div className={s.user__content__action}><Icons.Meet /></div>

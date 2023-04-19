@@ -4,9 +4,14 @@ export const useOnlineStatus = (): boolean => {
   const [online, setOnline] = useState(window.navigator.onLine);
 
   useEffect(() => {
-    const handleOffline = () => setOnline(false);
-    const handleOnline = () => setOnline(true);
-    
+    function handleOffline() {
+      setOnline(false);
+    }
+
+    function handleOnline() {
+      setOnline(true);
+    }
+
     window.addEventListener("offline", handleOffline);
     window.addEventListener("online", handleOnline);
 

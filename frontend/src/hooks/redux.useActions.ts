@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { SignInActions } from "@/store/slices/signin/signin.slice";
 import { ContentControllerActions } from "@store/slices/controller/controller.slice";
 import { CardDataActions } from "@store/slices/data/data.slice";
-import { SearchModalActions } from "@store/slices/modal/search.modal.slice";
 import { ChannelControllerActions } from "@store/slices/channel/channel.slice";
 import { SignUpActions } from "@/store/slices/signup/signup.slice";
 import { UserActions } from "@store/slices/user/user.sclice";
@@ -14,7 +13,6 @@ const AllActions = {
   ...SignUpActions,
   ...ContentControllerActions,
   ...CardDataActions,
-  ...SearchModalActions,
   ...ChannelControllerActions,
 };
 

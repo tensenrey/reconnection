@@ -21,7 +21,7 @@ export const ResponsiveNavbar: FunctionComponent<
     <Component.Navbar />
     <Responsive>
       <>
-        <Modals.Search />
+        {/* <Modals /> */}
         {children}
       </>
     </Responsive>

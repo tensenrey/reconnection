@@ -1,4 +1,4 @@
-package com.cloudstorage.cloudstorage.cloud;
+package com.cloud.cloud.cloud;
 
 public class CloudDto {
   private String cloudTitle;

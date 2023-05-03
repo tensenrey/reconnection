@@ -1,4 +1,4 @@
-package com.cloudstorage.cloudstorage.model;
+package com.cloud.cloud.model;
 
 import java.util.UUID;
 

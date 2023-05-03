@@ -1,4 +1,4 @@
-package com.cloudstorage.cloudstorage.cloud;
+package com.cloud.cloud.cloud;
 
 import java.util.List;
 import java.util.UUID;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.cloudstorage.cloudstorage.model.CloudModel;
+import com.cloud.cloud.model.CloudModel;
 
 @RequestMapping("cloud")
 @RestController

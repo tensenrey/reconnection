@@ -1,11 +1,11 @@
-package com.cloudstorage.cloudstorage.cloud;
+package com.cloud.cloud.cloud;
 
 import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cloudstorage.cloudstorage.model.CloudModel;
+import com.cloud.cloud.model.CloudModel;
 
 @Service()
 public class CloudService {

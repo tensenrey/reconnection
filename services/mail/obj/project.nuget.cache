@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2u0r4zjccwJktxX3em6ElB3aVCclx2G5rPXRB2qFAnnWAkH5+ljh9f2vlgCOjcKGlzh6/V7yUpiy9Gd8ZnzxIA==",
+  "dgSpecHash": "BiyO0ZXyAJsNP1ih2tZ8zRyiXSi98eDO9ZSS/DACOoxismQUNEFCP25zdnlBPWO7X3NFUleZ0y2D6byOLGWFUg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\a1one\\Documents\\dev\\projects\\x\\reconnection\\services\\mailer\\mailer.csproj",
+  "projectFilePath": "C:\\Users\\a1one\\Documents\\dev\\projects\\x\\reconnection\\services\\mail\\mailer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\a1one\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.5\\microsoft.aspnetcore.openapi.7.0.5.nupkg.sha512",
     "C:\\Users\\a1one\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

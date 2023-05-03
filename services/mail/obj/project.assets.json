@@ -465,11 +465,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\a1one\\Documents\\dev\\projects\\x\\reconnection\\services\\mailer\\mailer.csproj",
+      "projectUniqueName": "C:\\Users\\a1one\\Documents\\dev\\projects\\x\\reconnection\\services\\mail\\mailer.csproj",
       "projectName": "mailer",
-      "projectPath": "C:\\Users\\a1one\\Documents\\dev\\projects\\x\\reconnection\\services\\mailer\\mailer.csproj",
+      "projectPath": "C:\\Users\\a1one\\Documents\\dev\\projects\\x\\reconnection\\services\\mail\\mailer.csproj",
       "packagesPath": "C:\\Users\\a1one\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\a1one\\Documents\\dev\\projects\\x\\reconnection\\services\\mailer\\obj\\",
+      "outputPath": "C:\\Users\\a1one\\Documents\\dev\\projects\\x\\reconnection\\services\\mail\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\a1one\\AppData\\Roaming\\NuGet\\NuGet.Config"

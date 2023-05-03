@@ -7,16 +7,16 @@ namespace MailAPI.controllers
   [ApiController]
   public class MailController : ApiControllerAttribute
   {
-    public static List<MailerModel> mails = new List<MailerModel>();
+    public static List<MailModel> mails = new List<MailModel>();
 
     [HttpGet]
-    public List<MailerModel> getMail() => mails;
+    public List<MailModel> getMail() => mails;
 
     [HttpPost]
-    public void createMail() => mails.Add(new MailerModel());
+    public void createMail() => mails.Add(new MailModel());
 
     [HttpGet("{id}")]
-    public MailerModel getMailByUuid(Guid id)
+    public MailModel getMailByUuid(Guid id)
     {
       var mail = mails.Find(mail => mail.uuid.Equals(id));
 

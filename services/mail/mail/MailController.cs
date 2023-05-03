@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
-using MailerAPI.models;
+using MailAPI.models;
 
-namespace MailerAPI.controllers
+namespace MailAPI.controllers
 {
   [Route("api/mail")]
   [ApiController]
-  public class MailerController : ApiControllerAttribute
+  public class MailController : ApiControllerAttribute
   {
     public static List<MailerModel> mails = new List<MailerModel>();
 

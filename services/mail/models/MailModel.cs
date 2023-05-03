@@ -1,6 +1,6 @@
-namespace MailerAPI.models
+namespace MailAPI.models
 {
-  public class MailerModel
+  public class MailModel
   {
     public String? Peer { get; set; }
     public String? Message { get; set; }

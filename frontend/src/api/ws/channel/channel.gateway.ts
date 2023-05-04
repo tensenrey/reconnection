@@ -6,4 +6,10 @@ export class ChannelGateway {
   constructor(socket: Socket) {
     this.socket = socket;
   }
+
+  public connect(): void {
+      this.socket.on("connect",() => {
+      console.log(this.socket);
+    });
+  }
 }

@@ -1,13 +1,30 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useLayoutEffect } from "react";
 import { api } from "@/api/export";
+import { useActions } from "@/hooks/redux.useActions";
 
-export const Channel: FunctionComponent = () => {
+interface IChannel {
+  component: FunctionComponent
+}
+
+interface IChannelSocketList {
+  socketsIds: string[]
+}
+
+export const Channel: FunctionComponent<IChannel> = ({ component: Component }) => {
+  const { ChannelControllerJoinEvent } = useActions()
   const channelIO = api.GatewayEngine.SocketCreator.connectByNSP("channel");
+  const channelWay = new api.GatewayEngine.gateways.ChannelGateway(channelIO);
+  
+  useLayoutEffect(() => {
+    channelWay.connect();
+    channelIO.emit("join");
+    channelIO.on("join", (socketList: IChannelSocketList) => {
+      for (const socket of socketList.socketsIds) {
+        ChannelControllerJoinEvent({ id: socket });
+      }
+    });
+  }, [])
 
-  channelIO.on("connect",() => {
-    console.log(channelIO);
-  });
-
-  return (<>Channel Interception</>);
+  return <Component />;
 }
  

@@ -55,7 +55,7 @@ export namespace CoreTypes {
 
   export namespace Channel {
     export interface IChannelClient {
-      socket: string;
+      id: string;
     }
 
     export interface IChannelSlice {

@@ -4,8 +4,10 @@ import s from "./channel.module.scss";
 import { useTypedSelector } from "@hooks/redux.useTypedSelector";
 import { Icons } from "@assets/components/export";
 import { Link } from "react-router-dom";
+import { Interception } from "@/interceptions/export";
+import { CoreTypes } from "@/@types/namespaces";
 
-export const Channel: FunctionComponent = () => {
+const ChannelLayout: FunctionComponent = () => {
   const payload = useTypedSelector((state) => ({
     channel: state.Channel,
     user: state.User,
@@ -26,11 +28,11 @@ export const Channel: FunctionComponent = () => {
           </div>
           <section className={s.channel__wrapper}>
             <section className={s.channel__list}>
-              {payload.channel.sockets.map((el: { socket: string }) => {
+              {payload.channel.sockets.map((socket: CoreTypes.Channel.IChannelClient) => {
                 return (
-                  <div className={s.channel__stream} key={el.socket}>
+                  <div className={s.channel__stream} key={socket.id}>
                     <div className={s.channel__stream__avatar}></div>
-                    <p className={s.channel__stream__user}>@{el.socket}</p>
+                    <p className={s.channel__stream__user}>@{socket.id}</p>
                   </div>
                 );
               })}
@@ -40,4 +42,8 @@ export const Channel: FunctionComponent = () => {
       </Layout.Responsive>
     </section>
   );
+};
+
+export const Channel: FunctionComponent = () => {
+  return (<Interception.Channel component={ChannelLayout}/>);
 };

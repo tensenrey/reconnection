@@ -1,4 +1,8 @@
-import { SubscribeMessage, WebSocketGateway, WebSocketServer } from '@nestjs/websockets';
+import {
+  SubscribeMessage,
+  WebSocketGateway,
+  WebSocketServer,
+} from '@nestjs/websockets';
 import { Socket, Server } from 'socket.io';
 
 @WebSocketGateway({ transports: ['websocket'], namespace: '/channel' })
@@ -7,11 +11,31 @@ export class ChannelGateway {
   server: Server;
 
   handleConnection(client: Socket) {
-    client.emit('connection', 'Successfully connected to server');
+    client.emit('connection', 'world');
+  }
+
+  @SubscribeMessage('join')
+  async handleJoin(client: Socket) {
+    const sockets = await this.server.local.fetchSockets();
+    const socketsId: string[] = [];
+
+    for (const socket of sockets) {
+      socketsId.push(socket.id);
+    }
+
+    client.emit('join', { socketsIds: socketsId });
+    client.broadcast.emit('join', { socketsIds: socketsId });
   }
 
   @SubscribeMessage('leave')
-  handleDisconnect(client: Socket) {
-    console.log(`Socket disconnected: ${client.id}`);
+  async handleDisconnect(client: Socket) {
+    const sockets = await this.server.local.fetchSockets();
+    const socketsId: string[] = [];
+
+    for (const socket of sockets) {
+      socketsId.push(socket.id);
+    }
+
+    client.broadcast.emit('leave', { sockets: socketsId });
   }
 }

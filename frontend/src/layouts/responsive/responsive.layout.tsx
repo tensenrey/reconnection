@@ -7,11 +7,9 @@ import { CoreTypes } from "@/@types/namespaces";
 export const Responsive: FunctionComponent<
   CoreTypes.Layouting.IResponsiveLayout
 > = ({ children }) => (
-  <>
-    <section className={s.layout}>
-      <section className={s.responsive}>{children}</section>
-    </section>
-  </>
+  <section className={s.layout}>
+    <section className={s.responsive}>{children}</section>
+  </section>
 );
 
 export const ResponsiveNavbar: FunctionComponent<
@@ -19,11 +17,10 @@ export const ResponsiveNavbar: FunctionComponent<
 > = ({ children }) => (
   <>
     <Component.Navbar />
-    <Responsive>
-      <>
-        {/* <Modals /> */}
+    {/* <Modals /> */}
+    <Responsive>      
         {children}
-      </>
     </Responsive>
   </>
 );
+

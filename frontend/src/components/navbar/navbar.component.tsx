@@ -9,7 +9,6 @@ import { Icons } from "@/assets/components/export";
 
 export const Navbar: FunctionComponent = () => {
   const payload = useTypedSelector((state) => state.User);
-
   const jwt = Utils.JWTDecoder(localStorage.getItem("secret")!);
   const { UserSetPayload } = useActions();
   const { data } = useUserQuery(jwt.id);
@@ -38,9 +37,15 @@ export const Navbar: FunctionComponent = () => {
           />
         </div>
         <div className={s.user__content}>
-          <Link className={s.user__content__action} to={"/meet/1"}><Icons.Meet /></Link>
-          <div className={s.user__content__action}><Icons.Settings /></div>
-          <div className={s.user__content__action}><Icons.Natification /></div>
+          <Link className={s.user__content__action} to={"/meet/1"}>
+            <Icons.Meet />
+          </Link>
+          <div className={s.user__content__action}>
+            <Icons.Settings />
+          </div>
+          <div className={s.user__content__action}>
+            <Icons.Natification />
+          </div>
           <div className={s.user__content__link}>
             <Link to={`/${payload?.user.id}`} className={s.username}>
               {payload.user?.avatar !== null && (

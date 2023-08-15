@@ -1,7 +1,11 @@
 from django.shortcuts import render
-from .models import input
-from .formes import fileinp
+from .formes import fileinput
 
+
+def fileinp(request):
+    form = fileinput(request.POST, request.FILES)
+    context = {"form": form}
+    return render(request, "index.html", context)
 
 def index(request):
     data = {
@@ -10,7 +14,5 @@ def index(request):
     return render(request, "index.html", data)
 
 
-def fileinput(request):
-    form = fileinp()
-    return render(request, "index.html", {'form': form, 'input': input})
+
 

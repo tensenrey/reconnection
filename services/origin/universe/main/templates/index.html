@@ -5,11 +5,12 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="post">
+    <form action="" method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Расшифровать </button>
+        {{ form }}
+        <button type="submit">Расшифровать</button>
     </form>
+    
     <ol>
     {% for i in lis %}
         <li>{{ i }}</li>
